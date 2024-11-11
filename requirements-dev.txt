@@ -1,0 +1,17 @@
+# Install normal requirements
+-r requirements.txt
+
+# Wagtail Extensions
+wagtailmedia
+wagtail-word
+wagtail-ai==2.1.1  # Ensure Python >= 3.11
+wagtail-localize
+
+# Tooling for local development
+django-sass
+django-stubs
+mypy
+pytest
+pytest-cov
+pytest-django
+ruff

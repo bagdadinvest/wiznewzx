@@ -1,0 +1,186 @@
+{% extends "wagtailadmin/base.html" %}
+{% load static %}
+{% block content %}
+  <title>Scrape Page Content</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Spin.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+
+  <!-- Swiper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #f9f9f9;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      min-height: 50px;
+      resize: none; /* Users can't resize manually */
+    }
+
+    .swiper {
+      width: 100%;
+      height: 300px;
+    }
+
+    .swiper-scrollbar {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .loading-spinner {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+    }
+  </style>
+
+  <div class="container mt-4">
+    <div class="row">
+          <div class="col-md-8 offset-md-2 p-4 bg-light rounded shadow-sm">
+
+  <h1>Scrape Page Content</h1>
+  <input type="text" id="urlInput" placeholder="Enter URL" style="width: 80%;">
+  <button id="scrapeBtn">Scrape</button>
+
+  <div class="loading-spinner" id="loadingSpinner"></div>
+
+  <div id="contentModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Scraped Content</h2>
+
+      <!-- H1 Title Card -->
+      <div class="card">
+        <strong>Page Title</strong>
+        <textarea id="h1Title" readonly></textarea>
+      </div>
+
+      <!-- Single Editable TextArea for All Other Content -->
+      <div class="card swiper mySwiper">
+        <textarea id="combinedContent" style="height: 250px; overflow-y: scroll;"></textarea>
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+      <button id="submitSelection">Submit Selection</button>
+    </div>
+  </div>
+     </div>
+          </div>
+             </div>
+<script>
+  $(document).ready(function() {
+    var modal = $("#contentModal");
+    var closeBtn = $(".close");
+    var spinner = new Spinner().spin();
+
+    $("#scrapeBtn").click(function() {
+      var url = $("#urlInput").val();
+      $("#loadingSpinner").empty().append(spinner.el).show();
+
+      $.ajax({
+        url: "{% url 'scrape_view' %}",
+        method: 'POST',
+        data: {
+          url: url,
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+        },
+        success: function(data) {
+          $("#scrapedContent").empty();
+          $("#loadingSpinner").hide();
+
+          // Display H1 title
+          $("#h1Title").val(data.h1);
+
+          // Combine all subheaders and paragraphs into one text field
+          let combinedText = "";
+          const combinedContent = data.subheaders.concat(data.paragraphs);
+          combinedContent.forEach(item => {
+            combinedText += (item.text || item) + "\n\n";
+          });
+          $("#combinedContent").val(combinedText.trim());
+
+          // Wait until DOM elements are fully rendered, then initialize Swiper
+          setTimeout(() => {
+            new Swiper(".mySwiper", {
+              direction: "vertical",
+              scrollbar: {
+                el: ".swiper-scrollbar",
+                draggable: true
+              }
+            });
+          }, 0); // Ensure it runs after DOM updates
+
+          modal.show();
+        },
+        error: function() {
+          $("#loadingSpinner").hide();
+          alert("An error occurred during scraping.");
+        }
+      });
+    });
+
+    closeBtn.click(function() {
+      modal.hide();
+    });
+
+    $("#submitSelection").click(function() {
+      const title = $("#h1Title").val();
+      const combinedContent = $("#combinedContent").val();
+      alert(`Title: ${title}\nContent: ${combinedContent}`);
+      modal.hide();
+    });
+  });
+</script>
+{% endblock content %}

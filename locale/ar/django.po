@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-11 05:15+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: custom_user/admin.py:21
+msgid "Personal info"
+msgstr ""
+
+#: custom_user/admin.py:30
+msgid "Permissions"
+msgstr ""
+
+#: custom_user/admin.py:41
+msgid "Important dates"
+msgstr ""
+
+#: custom_user/models.py:50
+msgid "email address"
+msgstr ""
+
+#: custom_user/models.py:53
+msgid "A user with that username already exists."
+msgstr ""
+
+#: wagtail_ai/forms.py:11
+msgid "No text provided - please enter some text before using AI features."
+msgstr ""
+
+#: wagtail_ai/forms.py:18 wagtail_ai/forms.py:19 wagtail_ai/views.py:117
+msgid "Invalid prompt provided."
+msgstr ""
+
+#: wagtail_ai/forms.py:58
+msgid "Describe image using AI"
+msgstr ""
+
+#: wagtail_ai/models.py:12
+msgid "Replace content"
+msgstr ""
+
+#: wagtail_ai/models.py:13
+msgid "Append after existing content"
+msgstr ""
+
+#: wagtail_ai/models.py:22
+msgid ""
+"The prompt description, displayed alongside its label on the settings "
+"listing."
+msgstr ""
+
+#: wagtail_ai/models.py:29
+msgid ""
+"The prompt text sent to the Large Language Model (e.g. ChatGPT) to generate "
+"content."
+msgstr ""
+
+#: wagtail_ai/models.py:35
+msgid "The method used for processing the responses to the prompt."
+msgstr ""
+
+#: wagtail_ai/views.py:133
+msgid "An unexpected error occurred."
+msgstr ""
+
+#: wagtail_word/forms.py:355
+msgid "Word Document"
+msgstr ""
+
+#: wagtail_word/forms.py:356
+msgid "Upload a word document"
+msgstr ""
+
+#: wagtail_word/forms.py:373
+msgid "Invalid file extension"
+msgstr ""
+
+#: wagtail_word/forms.py:380
+msgid "Invalid .docx file"
+msgstr ""
+
+#: wagtail_word/models.py:44
+msgid "Upload"
+msgstr ""
+
+#: wagtail_word/models.py:45
+msgid "Edit"
+msgstr ""
+
+#: wagtail_word/models.py:46
+msgid "Promote"
+msgstr ""
+
+#: wagtail_word/models.py:47
+msgid "Settings"
+msgstr ""
+
+#: wagtail_word/models.py:51
+msgid "Word Document Article"
+msgstr ""
+
+#: wagtail_word/templates/base_word_document_page.html:55
+#: wagtail_word/templates/wagtail_word/base_word_document_page.html:62
+msgid "Search..."
+msgstr ""
+
+#: wagtail_word/templates/base_word_document_page.html:60
+#: wagtail_word/templates/wagtail_word/base_word_document_page.html:67
+msgid "Quick Links"
+msgstr ""
+
+#: wagtail_word/templates/base_word_document_page.html:63
+#: wagtail_word/templates/wagtail_word/base_word_document_page.html:70
+msgid "Home"
+msgstr ""
+
+#: wagtail_word/templates/base_word_document_page.html:64
+#: wagtail_word/templates/wagtail_word/base_word_document_page.html:71
+msgid "About Us"
+msgstr ""
+
+#: wagtail_word/templates/base_word_document_page.html:65
+#: wagtail_word/templates/wagtail_word/base_word_document_page.html:72
+msgid "Denti-Board"
+msgstr ""
+
+#: wagtail_word/templates/base_word_document_page.html:66
+#: wagtail_word/templates/wagtail_word/base_word_document_page.html:73
+msgid "Top Blogs"
+msgstr ""
+
+#: wagtail_word/templates/base_word_document_page.html:71
+#: wagtail_word/templates/wagtail_word/base_word_document_page.html:78
+msgid "Recent Posts"
+msgstr ""
+
+#: wagtail_word/templates/base_word_document_page.html:92
+#: wagtail_word/templates/wagtail_word/base_word_document_page.html:99
+msgid "No recent posts available."
+msgstr ""
+
+#: wagtail_word/templates/base_word_document_page.html:99
+#: wagtail_word/templates/wagtail_word/base_word_document_page.html:106
+msgid "Latest Gallery"
+msgstr ""
+
+#: website/templates/coderedcms/blocks/film_strip_block.html:28
+#: website/templates/coderedcms/includes/pagination.html:8
+msgid "Previous"
+msgstr ""
+
+#: website/templates/coderedcms/blocks/film_strip_block.html:31
+#: website/templates/coderedcms/includes/pagination.html:16
+msgid "Next"
+msgstr ""
+
+#: website/templates/coderedcms/includes/classifier_dropdowns.html:5
+msgid "Filter by"
+msgstr ""
+
+#: website/templates/coderedcms/includes/classifier_dropdowns.html:11
+msgid "Filter"
+msgstr ""
+
+#: website/templates/coderedcms/includes/classifier_dropdowns.html:12
+#: website/templates/coderedcms/includes/classifier_nav.html:6
+msgid "All"
+msgstr ""
+
+#: website/templates/coderedcms/includes/form_honeypot.html:3
+msgid "Leave this blank if you are a human"
+msgstr ""
+
+#: website/templates/coderedcms/includes/iframe_gmap.html:5
+msgid "Map of"
+msgstr ""
+
+#: website/templates/coderedcms/includes/pagination.html:12
+msgid "Page"
+msgstr ""
+
+#: website/templates/coderedcms/includes/pagination.html:12
+msgid "of"
+msgstr ""
+
+#: website/templates/coderedcms/pages/base.html:149
+msgid "Related"
+msgstr ""
+
+#: website/templates/coderedcms/pages/form_page_landing.html:5
+msgid "Thank You"
+msgstr ""
+
+#: website/templates/coderedcms/pages/form_page_landing.html:6
+msgid "We have successfully received your submission."
+msgstr ""
+
+#: website/templates/coderedcms/pages/search.html:7
+#: website/templates/coderedcms/pages/search.html:14
+#: website/templates/coderedcms/pages/search.html:32
+#: website/templates/coderedcms/snippets/navbar.html:37
+msgid "Search"
+msgstr ""
+
+#: website/templates/coderedcms/pages/search.html:7
+#: website/templates/coderedcms/pages/search.html:16
+msgid "Search for"
+msgstr ""
+
+#: website/templates/coderedcms/pages/search.html:45
+msgid "All Results"
+msgstr ""
+
+#: website/templates/coderedcms/pages/search.html:80
+msgid "No results found."
+msgstr ""
+
+#: website/templates/coderedcms/widgets/checkbox_classifiers.html:31
+msgid "Organize Pages with Classifiers"
+msgstr ""
+
+#: website/templates/coderedcms/widgets/checkbox_classifiers.html:33
+msgid "Use Classifiers to create custom categories and filters."
+msgstr ""
+
+#: website/templates/coderedcms/widgets/checkbox_classifiers.html:37
+msgid "Add Classifier"
+msgstr ""
+
+#: website/templates/wagtailadmin/login.html:5
+msgid "Sign in to"
+msgstr ""
