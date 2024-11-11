@@ -1,45 +1,136 @@
 {% extends "coderedcms/pages/web_page.html" %}
-
 {% load wagtailadmin_tags wagtailcore_tags wagtailimages_tags coderedcms_tags %}
 
 {% block content %}
-<article class="crx-article">
-  {% block article_header %}
-  <div class="container my-4 text-center">
-    <h1>{{ self.title }}</h1>
-    {% if self.caption %}
-    <p class="lead">{{self.caption}}</p>
-    {% endif %}
-    <p>
-      {% if self.author %}
-      <img class="article-author-img rounded-circle me-2" src="{% avatar_url self.author %}">
-      {% endif %}
-      {% if self.seo_author %}
-      <span class="article-author">{{self.seo_author}}</span>
-      <span class="mx-2">&bull;</span>
-      {% endif %}
-      <span class="article-date">{{ self.seo_published_at }}</span>
-    </p>
-  </div>
-  {% endblock %}
-  {% block article_cover_image %}
-  {% if self.cover_image %}
-  <div class="container mb-5">
-    {% image self.cover_image fill-1600x900 format-webp preserve-svg as cover_image %}
-    <img src="{{cover_image.url}}" class="w-100">
-  </div>
-  {% endif %}
-  {% endblock %}
-  {% block article_body %}
-  <div class="container mx-auto article-body">
-    {% for block in self.body %}
-    {% include_block block with settings=settings %}
-    {% endfor %}
-  </div>
-  {% endblock %}
+<!-- breadcrumb Start-->
+<div class="page-notification">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
 
-  {% block related_content %}
-  {{ block.super }}
-  {% endblock %}
-</article>
+<!-- Blog Area Start -->
+<section class="blog_area single-post-area bottom-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 posts-list">
+                <div class="single-post">
+                    {% block article_cover_image %}
+                    {% if self.cover_image %}
+                    <div class="feature-img">
+                        {% image self.cover_image fill-750x500 format-webp as cover_image %}
+                        <img class="img-fluid" src="{{ cover_image.url }}" alt="{{ self.title }}">
+                    </div>
+                    {% endif %}
+                    {% endblock %}
+                    <div class="blog_details">
+                        <h2>{{ self.title }}</h2>
+                        <ul class="blog-info-link mt-3 mb-4">
+                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                        </ul>
+                        <p class="excert">{{ self.summary|default:"Lorem ipsum placeholder content." }}</p>
+                        {% block article_body %}
+                        <div class="container mx-auto article-body">
+                            {% for block in self.body %}
+                            {% include_block block with settings=settings %}
+                            {% endfor %}
+                        </div>
+                        {% endblock %}
+                    </div>
+                </div>
+                <div class="navigation-top">
+                    <div class="d-sm-flex justify-content-between text-center">
+                        <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4 people like this</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Navigation area for Prev/Next posts -->
+                <div class="navigation-area">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12 nav-left d-flex align-items-center">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img class="img-fluid" src="/static/assets/img/post/preview.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="details">
+                                <p>Prev Post</p>
+                                <a href="#">
+                                    <h4>Space The Final Frontier</h4>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12 nav-right d-flex align-items-center">
+                            <div class="details">
+                                <p>Next Post</p>
+                                <a href="#">
+                                    <h4>Telescopes 101</h4>
+                                </a>
+                            </div>
+                            <div class="thumb">
+                                <a href="#">
+                                    <img class="img-fluid" src="/static/assets/img/post/next.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sidebar Widgets -->
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget search_widget">
+                        <form action="#">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder='Search Keyword'>
+                                    <div class="input-group-append">
+                                        <button class="btns" type="button"><i class="ti-search"></i></button>
+                                    </div>
+                                </div>
+                                <button class="button primary-bg text-white w-100" type="submit">Search</button>
+                            </div>
+                        </form>
+                    </aside>
+                    <!-- Category Widget -->
+                    <aside class="single_sidebar_widget post_category_widget">
+                        <h4 class="widget_title">Category</h4>
+                        <ul class="list cat-list">
+                            <li><a href="#" class="d-flex justify-content-between"><p>Travel</p><p>(10)</p></a></li>
+                            <li><a href="#" class="d-flex justify-content-between"><p>Health</p><p>(21)</p></a></li>
+                        </ul>
+                    </aside>
+                    <!-- Recent Posts -->
+                    <aside class="single_sidebar_widget popular_post_widget">
+                        <h3 class="widget_title">Recent Post</h3>
+                        <div class="media post_item">
+                            <img src="/static/assets/img/post/post_1.jpg" alt="post">
+                            <div class="media-body">
+                                <a href="blog_details.html"><h3>From life was you fish...</h3></a>
+                                <p>January 12, 2019</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Area End -->
 {% endblock %}

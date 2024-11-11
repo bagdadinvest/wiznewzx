@@ -54,16 +54,20 @@
   {% include "wagtailseo/meta.html" %}
 
   {% block frontend_assets %}
-  <link rel="stylesheet" href="{% static 'coderedcms/vendor/bootstrap/dist/css/bootstrap.min.css' %}?v={% coderedcms_version %}">
-  {% endblock %}
+{% load static %}
 
-  {% block coderedcms_assets %}
-  {% django_setting "DEBUG" as debug %}
-  {% if debug %}
-  <link rel="stylesheet" href="{% static 'coderedcms/css/crx-front.css' %}?v={% coderedcms_version %}">
-  {% else %}
-  <link rel="stylesheet" href="{% static 'coderedcms/css/crx-front.min.css' %}?v={% coderedcms_version %}">
-  {% endif %}
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/lightslider.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
   {% endblock %}
 
   {% block custom_assets %}{% endblock %}
@@ -172,7 +176,32 @@
   {% block footer %}{% endblock %}
 
   {% block frontend_scripts %}
-  <script src="{% static 'coderedcms/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}?v={% coderedcms_version %}"></script>
+<script src="{% static 'assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+<!-- Slick , Owl-Carousel , lightslider , Mobile Menu-->
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+<script src="{% static 'assets/js/lightslider.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.slicknav.min.js' %}"></script>
+
+<!-- wow, popup, Nice-select  -->
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.js' %}"></script>
+<script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+
+<!-- contact js -->
+<script src="{% static 'assets/js/contact.js' %}"></script>
+<script src="{% static 'assets/js/jquery.form.js' %}"></script>
+<script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'assets/js/mail-script.js' %}"></script>
+<script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+
+<!-- Jquery Plugins, main Jquery -->
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
   {% endblock %}
 
   {% block coderedcms_scripts %}

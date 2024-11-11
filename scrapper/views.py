@@ -1,63 +1,81 @@
-import logging
 from django.http import JsonResponse
+from wagtail.blocks import RichTextBlock
+from wagtail.models import Page
+from website.models import ArticlePage, ArticleIndexPage  # Import your models
+import json
+import logging
 from playwright.sync_api import sync_playwright
 
-# Setup logging for debug statements
 logging.basicConfig(level=logging.DEBUG)
 
 def scrape_page_content(url):
+    """Scrapes page content and returns a dictionary with 'h1' and 'body'."""
     with sync_playwright() as p:
         logging.debug("Launching Playwright browser...")
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         logging.debug(f"Navigating to {url}")
 
+        scraped_content = {"h1": "Untitled Article", "body": "No content available."}
+
         try:
             page.goto(url, timeout=60000, wait_until="domcontentloaded")
 
-            scraped_content = {
-                "h1": None,
-                "subheaders": [],
-                "paragraphs": []
-            }
+            # Get h1
+            h1_element = page.query_selector('h1')
+            scraped_content["h1"] = h1_element.inner_text().strip() if h1_element else scraped_content["h1"]
 
-            # Get the h1 element
-            title_element = page.query_selector('h1')
-            scraped_content["h1"] = title_element.inner_text().strip() if title_element else "None"
-            logging.debug(f"Title found: {scraped_content['h1']}")
-
-            # Get the main content
+            # Get main content
             main_container = page.query_selector('article, .content, .article-body, .main-content')
             if main_container:
-                elements = main_container.query_selector_all('h2, h3, h4, p')
-                logging.debug(f"Found {len(elements)} elements in the main container.")
-                for element in elements:
-                    tag_name = element.evaluate('(element) => element.tagName.toLowerCase()')
-                    text_content = element.inner_text().strip()
-
-                    if tag_name in ['h2', 'h3', 'h4']:
-                        scraped_content['subheaders'].append({"tag": tag_name, "text": text_content})
-                    elif tag_name == 'p':
-                        scraped_content['paragraphs'].append(text_content)
-
-                # Sort paragraphs by length
-                scraped_content['paragraphs'].sort(key=len, reverse=True)
-                logging.debug("Paragraphs sorted by length.")
+                paragraphs = main_container.query_selector_all('p')
+                body_content = "\n\n".join([p.inner_text().strip() for p in paragraphs])
+                scraped_content["body"] = body_content
             else:
                 logging.warning("Main content container not found.")
         except Exception as e:
             logging.error(f"Error while scraping: {e}")
+            scraped_content["error"] = str(e)
         finally:
             browser.close()
-            logging.debug("Browser closed.")
 
         return scraped_content
 
 def scrape_view(request):
+    """Handles scraping and creation of ArticlePage."""
     if request.method == "POST":
-        url = request.POST.get("url")
-        logging.debug(f"Scraping content for URL: {url}")
-        content = scrape_page_content(url)
-        return JsonResponse(content, safe=False)
+        try:
+            data = json.loads(request.body)
+            url = data.get("url")
+            logging.debug(f"Scraping content for URL: {url}")
+            scraped_content = scrape_page_content(url)
 
-    return render(request, "admin/scrape_page.html")
+            if 'error' in scraped_content:
+                return JsonResponse(scraped_content, status=400)
+
+            # Ensure ArticleIndexPage exists
+            parent_page = ArticleIndexPage.objects.live().first()
+            if not parent_page:
+                logging.info("Creating a new ArticleIndexPage...")
+                home_page = Page.objects.get(slug='home')  # Adjust this slug if needed
+                parent_page = ArticleIndexPage(
+                    title="Articles",
+                    slug="articles"
+                )
+                home_page.add_child(instance=parent_page)
+                parent_page.save_revision().publish()
+
+            # Create new ArticlePage
+            article_page = ArticlePage(
+                title=scraped_content["h1"],
+                body=[("paragraph", scraped_content["body"])]  # Using StreamField block
+            )
+            parent_page.add_child(instance=article_page)
+            article_page.save_revision().publish()
+
+            return JsonResponse({"message": "ArticlePage created successfully.", "page_id": article_page.id})
+        except Exception as e:
+            logging.error(f"Error: {e}")
+            return JsonResponse({"error": str(e)}, status=500)
+
+    return JsonResponse({"error": "Invalid request method."}, status=405)
