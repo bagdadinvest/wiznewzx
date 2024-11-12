@@ -1,0 +1,135 @@
+{% extends "wagtailadmin/base.html" %}
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2 p-4 bg-light rounded shadow-sm">
+      <h2 class="text-center mb-4">Advanced Bing News Search</h2>
+
+      <!-- Form Section -->
+      <form method="post" action="{% url 'fetch_bing_news' %}">
+        {% csrf_token %}
+
+        <!-- Search Query -->
+        <div class="form-group mb-3">
+          <label for="query">Search Query:</label>
+          <input type="text" id="query" name="query" class="form-control" placeholder="Enter keywords..." required>
+        </div>
+
+        <!-- Country Code & Category -->
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <label for="cc">Country Code:</label>
+            <select id="cc" name="cc" class="form-control">
+              <option value="">Any</option>
+              <option value="US">United States</option>
+              <option value="GB">United Kingdom</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+              <!-- Add more country codes as needed -->
+            </select>
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="category">Category:</label>
+            <select id="category" name="category" class="form-control">
+              <option value="">Any</option>
+              <option value="Business">Business</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Politics">Politics</option>
+              <option value="Sports">Sports</option>
+              <option value="Technology">Technology</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Freshness & Safe Search -->
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <label for="freshness">Freshness:</label>
+            <select id="freshness" name="freshness" class="form-control">
+              <option value="">Any</option>
+              <option value="Day">Last 24 hours</option>
+              <option value="Week">Last 7 days</option>
+              <option value="Month">Last 30 days</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="safeSearch">Safe Search:</label>
+            <select id="safeSearch" name="safeSearch" class="form-control">
+              <option value="Off">Off</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Strict">Strict</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Market & Language -->
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <label for="mkt">Market:</label>
+            <input type="text" id="mkt" name="mkt" class="form-control" placeholder="e.g., en-US">
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="setLang">Language:</label>
+            <input type="text" id="setLang" name="setLang" class="form-control" placeholder="e.g., EN">
+          </div>
+        </div>
+
+        <!-- Count & Offset -->
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <label for="count">Number of Articles:</label>
+            <input type="number" id="count" name="count" class="form-control" min="1" max="100" value="10">
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="offset">Offset:</label>
+            <input type="number" id="offset" name="offset" class="form-control" min="0" placeholder="Skip articles">
+          </div>
+        </div>
+
+        <!-- Original Image & Sort By -->
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <div class="form-check mt-4">
+              <input class="form-check-input" type="checkbox" id="originalImg" name="originalImg">
+              <label class="form-check-label" for="originalImg">
+                Include Original Images
+              </label>
+            </div>
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="sortBy">Sort By:</label>
+            <select id="sortBy" name="sortBy" class="form-control">
+              <option value="Date">Date</option>
+              <option value="Relevance">Relevance</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Fetch News</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Results Section -->
+  <div class="mt-5">
+    {% if articles %}
+      <h3>Results:</h3>
+      <div class="list-group">
+        {% for article in articles %}
+          <a href="{{ article.url }}" target="_blank" class="list-group-item list-group-item-action">
+            <h5>{{ article.name }}</h5>
+            <p>{{ article.description|default:"No Description" }}</p>
+            <small>Source: {{ article.provider.0.name }}</small>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-center">No articles found.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

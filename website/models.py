@@ -257,3 +257,38 @@ class Footer(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+from wagtail.admin.panels import FieldPanel
+from wagtail.fields import RichTextField
+from django.db import models
+import uuid
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.images.models import Image
+from wagtail.admin.panels import FieldPanel
+
+def generate_unique_sku():
+    return uuid.uuid4().hex[:12].upper()
+
+class CustomArticlePage(ArticlePage):
+    sku = models.CharField(
+        max_length=12,
+        unique=True,
+        default=generate_unique_sku,  # Use the helper function
+        verbose_name="SKU"
+    )
+    additional_content = RichTextField(
+        blank=True,
+        verbose_name="Additional Rich Content",
+        help_text="Rich text content for extra details."
+    )
+
+    content_panels = ArticlePage.content_panels + [
+        FieldPanel("cover_image"),
+        FieldPanel("sku"),
+        FieldPanel("additional_content"),
+    ]
+
+    class Meta:
+        verbose_name = "Custom Article Page"
+    template = "coderedcms/pages/article_page.html"

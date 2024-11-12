@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "wagtailseo",
     'wagtailmedia',
     'wagtail_word',
+    'news',
     # Wagtail
     "wagtail.contrib.forms",
     'wagtail_localize',
@@ -225,7 +226,7 @@ CRX_DISABLE_NAVBAR = True
 CRX_DISABLE_FOOTER = True
 
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
-
+BING_NEWS_API_KEY = os.getenv("BING_NEWS_API_KEY")
 
 # settings.py
 
@@ -239,3 +240,15 @@ ROSETTA_MESSAGES_PER_PAGE = 500
 
 # Optional: If you have a specific endpoint
 ROSETTA_AZURE_ENDPOINT = os.getenv("ROSETTA_AZURE_ENDPOINT")
+
+WAGTAIL_AI = {
+    "BACKENDS": {
+        "default": {
+            "CLASS": "wagtail_ai.ai.openai.OpenAIBackend",
+            "CONFIG": {
+                "MODEL_ID": "gpt-4o",
+                "TOKEN_LIMIT": 15096,
+            },
+        },
+    },
+}

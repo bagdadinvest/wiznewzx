@@ -10,6 +10,87 @@ import logging
 # Setup logging
 logger = logging.getLogger(__name__)
 
+BING_NEWS_API_KEY = settings.BING_NEWS_API_KEY  # Ensure you add this in your settings
+
+def fetch_bing_news_view(request):
+    articles = []
+    error_message = None
+
+    if request.method == 'POST':
+        # Capture form parameters
+        query = request.POST.get('query', '')
+        cc = request.POST.get('cc', '')
+        category = request.POST.get('category', '')
+        freshness = request.POST.get('freshness', '')
+        count = request.POST.get('count', 10)
+        offset = request.POST.get('offset', 0)
+        mkt = request.POST.get('mkt', '')
+        setLang = request.POST.get('setLang', '')
+        originalImg = request.POST.get('originalImg', False)  # Correct boolean
+        safeSearch = request.POST.get('safeSearch', 'Moderate')
+        sortBy = request.POST.get('sortBy', 'Relevance')
+
+        # Define API endpoint URL
+        url = "https://api.bing.microsoft.com/v7.0/news/search"
+
+        # Build parameters dict only for non-empty values
+        params = {
+            'q': query,
+            'cc': cc,
+            'category': category,
+            'freshness': freshness,
+            'count': count,
+            'offset': offset if offset else None,
+            'mkt': mkt if mkt else None,
+            'setLang': setLang if setLang else None,
+            'originalImg': 'true' if originalImg else 'false',
+            'safeSearch': safeSearch,
+            'sortBy': sortBy,
+        }
+
+        # Remove keys with None values
+        params = {k: v for k, v in params.items() if v}
+
+        headers = {
+            'Ocp-Apim-Subscription-Key': BING_NEWS_API_KEY,
+        }
+
+        try:
+            response = requests.get(url, headers=headers, params=params)
+            response.raise_for_status()
+            articles = response.json().get('value', [])
+        except requests.exceptions.RequestException as e:
+            error_message = f"Error fetching news: {str(e)}"
+            logger.error(f"Bing News API request failed: {e}")
+        except ValueError as e:
+            error_message = "Error parsing response. Please try again later."
+            logger.error(f"Response parsing error: {e}")
+
+    context = {
+        'articles': articles,
+        'error_message': error_message,
+    }
+
+    return render(request, 'admin/fetch_bing_news.html', context)
+
+
+@hooks.register('register_admin_urls')
+def register_bing_news_fetch_url():
+    return [
+        path('fetch-bing-news/', fetch_bing_news_view, name='fetch_bing_news'),
+    ]
+
+@hooks.register('register_admin_menu_item')
+def register_bing_news_menu_item():
+    return MenuItem(
+        'Fetch Bing News',
+        reverse('fetch_bing_news'),
+        icon_name='site',
+        order=1001
+    )
+
+
+
 NEWS_API_KEY = settings.NEWS_API_KEY
 
 def fetch_news_view(request):
