@@ -1,0 +1,190 @@
+{% extends "wagtailadmin/base.html" %}
+{% block content %}
+{% load static i18n %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2 p-4 bg-light rounded shadow-sm">
+<div class="d-flex justify-content-center align-items-center mb-4">
+        <h2 class="me-2">{% trans "Advanced Bing News Search" %}</h2>
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTm3j_MZ7lksA2HLPjCMzUWljhIQyxSC8EIAZl9wQywAloI53EzlrNr2vkw5WqgT11v_9UCGVOQtiRM/pubhtml" target="_blank" class="text-decoration-none ms-2">
+          <i class="fas fa-info-circle"></i>
+        </a>
+      </div>
+      <!-- Form Section -->
+      <form method="post" action="{% url 'fetch_bing_news' %}">
+        {% csrf_token %}
+
+        <!-- Search Query -->
+        <div class="form-group mb-3">
+          <label for="query">{% trans "Search Query:" %}</label>
+          <input type="text" id="query" name="query" class="form-control" placeholder="{% trans 'Enter keywords...' %}" required>
+        </div>
+
+        <!-- Country Code & Category -->
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <label for="cc">{% trans "Country Code:" %}</label>
+            <select id="cc" name="cc" class="form-control">
+              <option value="">{% trans "Any" %}</option>
+              <option value="US">{% trans "United States" %}</option>
+              <option value="GB">{% trans "United Kingdom" %}</option>
+              <option value="FR">{% trans "France" %}</option>
+              <option value="DE">{% trans "Germany" %}</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="category">{% trans "Category:" %}</label>
+            <select id="category" name="category" class="form-control">
+              <option value="">{% trans "Any" %}</option>
+              <option value="Business">{% trans "Business" %}</option>
+              <option value="Entertainment">{% trans "Entertainment" %}</option>
+              <option value="Politics">{% trans "Politics" %}</option>
+              <option value="Sports">{% trans "Sports" %}</option>
+              <option value="Technology">{% trans "Technology" %}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Freshness & Safe Search -->
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <label for="freshness">{% trans "Freshness:" %}</label>
+            <select id="freshness" name="freshness" class="form-control">
+              <option value="">{% trans "Any" %}</option>
+              <option value="Day">{% trans "Last 24 hours" %}</option>
+              <option value="Week">{% trans "Last 7 days" %}</option>
+              <option value="Month">{% trans "Last 30 days" %}</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="safeSearch">{% trans "Safe Search:" %}</label>
+            <select id="safeSearch" name="safeSearch" class="form-control">
+              <option value="Off">{% trans "Off" %}</option>
+              <option value="Moderate">{% trans "Moderate" %}</option>
+              <option value="Strict">{% trans "Strict" %}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Market & Language -->
+        <div class="row">
+          <div class="form-group col-md-6 mb-3 d-flex align-items-center">
+            <label for="mkt" class="me-2">{% trans "Market:" %}</label>
+            <img src="https://flagcdn.com/us.svg" alt="{% trans 'US Flag' %}" width="20" class="me-2">
+            <select id="mkt" name="mkt" class="form-control">
+              <option value="en-US">{% trans "English (US)" %}</option>
+              <option value="fr-FR">{% trans "French (FR)" %}</option>
+              <option value="ar-SA">{% trans "Arabic (SA)" %}</option>
+              <option value="de-DE">{% trans "German (DE)" %}</option>
+              <option value="tr-TR">{% trans "Turkish (TR)" %}</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6 mb-3 d-flex align-items-center">
+            <label for="setLang" class="me-2">{% trans "Language:" %}</label>
+            <img src="https://flagcdn.com/gb.svg" alt="{% trans 'English Flag' %}" width="20" class="me-2">
+            <select id="setLang" name="setLang" class="form-control">
+              <option value="EN">{% trans "English" %}</option>
+              <option value="FR">{% trans "French" %}</option>
+              <option value="AR">{% trans "Arabic" %}</option>
+              <option value="DE">{% trans "German" %}</option>
+              <option value="TR">{% trans "Turkish" %}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Count & Offset -->
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <label for="count">{% trans "Number of Articles:" %}</label>
+            <input type="number" id="count" name="count" class="form-control" min="1" max="100" value="10">
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="offset">{% trans "Offset:" %}</label>
+            <input type="number" id="offset" name="offset" class="form-control" min="0" placeholder="{% trans 'Skip articles' %}">
+          </div>
+        </div>
+
+        <!-- Original Image & Sort By -->
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <div class="form-check mt-4">
+              <input class="form-check-input" type="checkbox" id="originalImg" name="originalImg">
+              <label class="form-check-label" for="originalImg">
+                {% trans "Include Original Images" %}
+              </label>
+            </div>
+          </div>
+          <div class="form-group col-md-6 mb-3">
+            <label for="sortBy">{% trans "Sort By:" %}</label>
+            <select id="sortBy" name="sortBy" class="form-control">
+              <option value="Date">{% trans "Date" %}</option>
+              <option value="Relevance">{% trans "Relevance" %}</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">{% trans "Fetch News" %}</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Swiper Slider Section -->
+  <div class="mt-5">
+    {% if articles %}
+      <h3 class="mb-4">{% trans "Latest Articles" %}</h3>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          {% for article in articles %}
+            <div class="swiper-slide">
+              <div class="card shadow-sm">
+                {% if article.image and article.image.thumbnail and article.image.thumbnail.contentUrl %}
+                  <img src="{{ article.image.thumbnail.contentUrl }}" class="card-img-top" alt="{{ article.name }}">
+                {% else %}
+                  <img src="{% static 'placeholder.jpg' %}" class="card-img-top" alt="{% trans 'No Image Available' %}">
+                {% endif %}
+                <div class="card-body">
+                  <h5 class="card-title">{{ article.name }}</h5>
+                  <p class="card-text">{{ article.description|default:_("No Description") }}</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">{% trans "Source:" %} {{ article.provider.0.name|default:_("Unknown") }}</small>
+                  <a href="{{ article.url }}" target="_blank" class="btn btn-primary btn-sm float-end">{% trans "Read More" %}</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Swiper Navigation Buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    {% else %}
+      <p class="text-center">{% trans "No articles found." %}</p>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Include Swiper.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  });
+</script>
+{% endblock %}

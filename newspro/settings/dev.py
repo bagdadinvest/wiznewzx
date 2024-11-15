@@ -12,6 +12,10 @@ INSTALLED_APPS += [  # noqa
     "django_sass",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://app.wisdar-emp.online'
+]
+
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 WAGTAIL_CACHE = False

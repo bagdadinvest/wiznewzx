@@ -1,10 +1,11 @@
 from wagtail.blocks import StreamValue
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from wagtail.models import Page
 from website.models import CustomArticlePage, ArticleIndexPage
 import json
 import logging
 from playwright.sync_api import sync_playwright
+from django.urls import reverse
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -92,7 +93,10 @@ def scrape_view(request):
             article_page.save_revision().publish()
             logging.debug(f"CustomArticlePage created successfully with ID: {article_page.id}")
 
-            return JsonResponse({"message": "CustomArticlePage created successfully.", "page_id": article_page.id})
+            # Get the admin edit URL
+            admin_edit_url = reverse('wagtailadmin_pages:edit', args=[article_page.id])
+            return JsonResponse({"redirect_url": admin_edit_url}, status=200)
+
         except Exception as e:
             logging.error(f"Error during article creation: {e}")
             return JsonResponse({"error": str(e)}, status=500)

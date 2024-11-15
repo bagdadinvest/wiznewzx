@@ -1,4 +1,4 @@
-from wagtail.admin.menu import MenuItem
+from wagtail.admin.menu import MenuItem, Menu
 from wagtail import hooks
 from django.urls import path, reverse
 from django.shortcuts import render
@@ -6,6 +6,7 @@ from django.conf import settings
 from django.http import JsonResponse
 import requests
 import logging
+from django.utils.translation import gettext_lazy as _  # For translations
 
 # Setup logging
 logger = logging.getLogger(__name__)
@@ -80,13 +81,14 @@ def register_bing_news_fetch_url():
         path('fetch-bing-news/', fetch_bing_news_view, name='fetch_bing_news'),
     ]
 
-@hooks.register('register_admin_menu_item')
-def register_bing_news_menu_item():
+
+@hooks.register("register_admin_menu_item")
+def register_fetch_bing_news_menu_item():
     return MenuItem(
-        'Fetch Bing News',
-        reverse('fetch_bing_news'),
-        icon_name='site',
-        order=1001
+        _("Fetch Bing News"),
+        reverse("fetch_bing_news"),
+        icon_name="bold",
+        order=101,
     )
 
 
@@ -148,11 +150,14 @@ def register_fetch_news_url():
         path('fetch-news/', fetch_news_view, name='fetch_news'),
     ]
 
-@hooks.register('register_admin_menu_item')
+@hooks.register("register_admin_menu_item")
 def register_fetch_news_menu_item():
     return MenuItem(
-        'Fetch News',
-        reverse('fetch_news'),
-        icon_name='site',
-        order=1000
+        _("Fetch News"),
+        reverse("fetch_news"),
+        icon_name="snippet",
+        order=102,
     )
+
+
+

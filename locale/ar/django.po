@@ -8,240 +8,540 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-11 05:15+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2024-11-14 12:50+0000\n"
+"PO-Revision-Date: 2024-11-14 16:27+0300\n"
+"Last-Translator:   <test@wisdar.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
+
 #: custom_user/admin.py:21
 msgid "Personal info"
-msgstr ""
+msgstr "المعلومات الشخصية"
 
 #: custom_user/admin.py:30
 msgid "Permissions"
-msgstr ""
+msgstr "اذونات"
 
 #: custom_user/admin.py:41
 msgid "Important dates"
-msgstr ""
+msgstr "تواريخ مهمة"
 
 #: custom_user/models.py:50
 msgid "email address"
-msgstr ""
+msgstr "عنوان البريد الإلكتروني"
 
 #: custom_user/models.py:53
 msgid "A user with that username already exists."
-msgstr ""
+msgstr "مستخدم باسم المستخدم هذا موجود بالفعل."
+
+#: scrapper/templates/admin/fetch_bing_news.html:11
+msgid "Advanced Bing News Search"
+msgstr "البحث المتقدم في أخبار Bing"
+
+#: scrapper/templates/admin/fetch_bing_news.html:19
+#: scrapper/templates/admin/fetch_news.html:57
+msgid "Search Query:"
+msgstr "خصائص البحث:"
+
+#: scrapper/templates/admin/fetch_bing_news.html:20
+#: scrapper/templates/admin/fetch_news.html:58
+msgid "Enter keywords..."
+msgstr "أدخل الكلمات الرئيسية..."
+
+#: scrapper/templates/admin/fetch_bing_news.html:26
+msgid "Country Code:"
+msgstr "رمز البلد:"
+
+#: scrapper/templates/admin/fetch_bing_news.html:28
+#: scrapper/templates/admin/fetch_bing_news.html:38
+#: scrapper/templates/admin/fetch_bing_news.html:53
+#: scrapper/templates/admin/fetch_news.html:68
+msgid "Any"
+msgstr "أي"
+
+#: scrapper/templates/admin/fetch_bing_news.html:29
+msgid "United States"
+msgstr "الولايات المتحدة الأمريكية"
+
+#: scrapper/templates/admin/fetch_bing_news.html:30
+msgid "United Kingdom"
+msgstr "المملكة المتحدة"
+
+#: scrapper/templates/admin/fetch_bing_news.html:31
+msgid "France"
+msgstr "فرنسا"
+
+#: scrapper/templates/admin/fetch_bing_news.html:32
+msgid "Germany"
+msgstr "ألمانيا"
+
+#: scrapper/templates/admin/fetch_bing_news.html:36
+msgid "Category:"
+msgstr "الصنف:"
+
+#: scrapper/templates/admin/fetch_bing_news.html:39
+msgid "Business"
+msgstr "اقتصاد و اعمال"
+
+#: scrapper/templates/admin/fetch_bing_news.html:40
+msgid "Entertainment"
+msgstr "ترفيه"
+
+#: scrapper/templates/admin/fetch_bing_news.html:41
+msgid "Politics"
+msgstr "سياسة"
+
+#: scrapper/templates/admin/fetch_bing_news.html:42
+msgid "Sports"
+msgstr "رياضة"
+
+#: scrapper/templates/admin/fetch_bing_news.html:43
+msgid "Technology"
+msgstr "تكنولوجيا"
+
+#: scrapper/templates/admin/fetch_bing_news.html:51
+msgid "Freshness:"
+msgstr "الشريط الزمني"
+
+#: scrapper/templates/admin/fetch_bing_news.html:54
+msgid "Last 24 hours"
+msgstr "آخر 24 ساعة"
+
+#: scrapper/templates/admin/fetch_bing_news.html:55
+msgid "Last 7 days"
+msgstr "آخر 7 أيام"
+
+#: scrapper/templates/admin/fetch_bing_news.html:56
+msgid "Last 30 days"
+msgstr "آخر 30 يوم"
+
+#: scrapper/templates/admin/fetch_bing_news.html:60
+msgid "Safe Search:"
+msgstr "البحث الآمن:"
+
+#: scrapper/templates/admin/fetch_bing_news.html:62
+msgid "Off"
+msgstr "ايقاف"
+
+#: scrapper/templates/admin/fetch_bing_news.html:63
+msgid "Moderate"
+msgstr "المعتدل"
+
+#: scrapper/templates/admin/fetch_bing_news.html:64
+msgid "Strict"
+msgstr "صارم"
+
+#: scrapper/templates/admin/fetch_bing_news.html:72
+msgid "Market:"
+msgstr "سوق:"
+
+#: scrapper/templates/admin/fetch_bing_news.html:73
+msgid "US Flag"
+msgstr "علم الولايات المتحدة"
+
+#: scrapper/templates/admin/fetch_bing_news.html:75
+msgid "English (US)"
+msgstr "الإنجليزية (الولايات المتحدة)"
+
+#: scrapper/templates/admin/fetch_bing_news.html:76
+msgid "French (FR)"
+msgstr "الفرنسية (FR)"
+
+#: scrapper/templates/admin/fetch_bing_news.html:77
+msgid "Arabic (SA)"
+msgstr "العربية (SA)"
+
+#: scrapper/templates/admin/fetch_bing_news.html:78
+msgid "German (DE)"
+msgstr "الألمانية (DE)"
+
+#: scrapper/templates/admin/fetch_bing_news.html:79
+msgid "Turkish (TR)"
+msgstr "التركية (TR)"
+
+#: scrapper/templates/admin/fetch_bing_news.html:84
+#: scrapper/templates/admin/fetch_news.html:63
+msgid "Language:"
+msgstr "اللغة:"
+
+#: scrapper/templates/admin/fetch_bing_news.html:85
+msgid "English Flag"
+msgstr "العلم الإنجليزي"
+
+#: scrapper/templates/admin/fetch_bing_news.html:87
+#: scrapper/templates/admin/fetch_news.html:65
+msgid "English"
+msgstr "الإنكليزية"
+
+#: scrapper/templates/admin/fetch_bing_news.html:88
+#: scrapper/templates/admin/fetch_news.html:67
+msgid "French"
+msgstr "الفرنسية"
+
+#: scrapper/templates/admin/fetch_bing_news.html:89
+msgid "Arabic"
+msgstr "العربية"
+
+#: scrapper/templates/admin/fetch_bing_news.html:90
+msgid "German"
+msgstr "الألمانية"
+
+#: scrapper/templates/admin/fetch_bing_news.html:91
+msgid "Turkish"
+msgstr "التركية"
+
+#: scrapper/templates/admin/fetch_bing_news.html:99
+msgid "Number of Articles:"
+msgstr "عدد المقالات:"
+
+#: scrapper/templates/admin/fetch_bing_news.html:103
+msgid "Offset:"
+msgstr "عدد المقالات :"
+
+#: scrapper/templates/admin/fetch_bing_news.html:104
+msgid "Skip articles"
+msgstr "تخطي المقالات"
+
+#: scrapper/templates/admin/fetch_bing_news.html:114
+msgid "Include Original Images"
+msgstr "تضمين الصور الأصلية"
+
+#: scrapper/templates/admin/fetch_bing_news.html:119
+#: scrapper/templates/admin/fetch_news.html:72
+msgid "Sort By:"
+msgstr "ترتيب حسب:"
+
+#: scrapper/templates/admin/fetch_bing_news.html:121
+msgid "Date"
+msgstr "تاريخ"
+
+#: scrapper/templates/admin/fetch_bing_news.html:122
+msgid "Relevance"
+msgstr "اهميه"
+
+#: scrapper/templates/admin/fetch_bing_news.html:127
+#: scrapper/templates/admin/fetch_news.html:50
+#: scrapper/templates/admin/fetch_news.html:102 scrapper/wagtail_hooks.py:157
+msgid "Fetch News"
+msgstr "اجراء البحث"
+
+#: scrapper/templates/admin/fetch_bing_news.html:135
+msgid "Latest Articles"
+msgstr "أحدث المقالات"
+
+#: scrapper/templates/admin/fetch_bing_news.html:144
+msgid "No Image Available"
+msgstr "لا توجد صورة متاحة"
+
+#: scrapper/templates/admin/fetch_bing_news.html:148
+#: scrapper/templates/admin/fetch_news.html:129
+#: scrapper/templates/admin/fetch_news.html:163
+msgid "No Description"
+msgstr "لا يوجد وصف"
+
+#: scrapper/templates/admin/fetch_bing_news.html:151
+#: scrapper/templates/admin/fetch_news.html:135
+#: scrapper/templates/admin/fetch_news.html:169
+msgid "Source:"
+msgstr "مصدر:"
+
+#: scrapper/templates/admin/fetch_bing_news.html:151
+msgid "Unknown"
+msgstr "مجهول"
+
+#: scrapper/templates/admin/fetch_bing_news.html:152
+#: scrapper/templates/admin/fetch_news.html:136
+#: scrapper/templates/admin/fetch_news.html:170
+msgid "Read More"
+msgstr "إقرأ المزيد"
+
+#: scrapper/templates/admin/fetch_bing_news.html:164
+#: scrapper/templates/admin/fetch_news.html:180
+msgid "No articles found."
+msgstr "لم يتم العثور على مقالات."
+
+#: scrapper/templates/admin/fetch_news.html:66
+msgid "Spanish"
+msgstr "الإسبانية"
+
+#: scrapper/templates/admin/fetch_news.html:74
+msgid "Relevancy"
+msgstr "الاهمية"
+
+#: scrapper/templates/admin/fetch_news.html:75
+msgid "Popularity"
+msgstr "الشعبية"
+
+#: scrapper/templates/admin/fetch_news.html:76
+msgid "Published Date"
+msgstr "تاريخ النشر"
+
+#: scrapper/templates/admin/fetch_news.html:82
+msgid "From Date:"
+msgstr "من التاريخ:"
+
+#: scrapper/templates/admin/fetch_news.html:86
+msgid "To Date:"
+msgstr "الى:"
+
+#: scrapper/templates/admin/fetch_news.html:92
+msgid "Sources (comma-separated):"
+msgstr "المصادر (مفصولة بفواصل):"
+
+#: scrapper/templates/admin/fetch_news.html:93
+msgid "e.g., cnn, bbc-news, the-verge"
+msgstr "على سبيل المثال ، سي إن إن ، بي بي سي نيوز ، ذا فيرج"
+
+#: scrapper/templates/admin/fetch_news.html:96
+msgid "Number of Articles (1-100):"
+msgstr "عدد المواد (1-100):"
+
+#: scrapper/templates/admin/fetch_news.html:121
+#: scrapper/templates/admin/fetch_news.html:155
+msgid "Article Image"
+msgstr "صورة المقال"
+
+#: scrapper/templates/admin/fetch_news.html:124
+#: scrapper/templates/admin/fetch_news.html:158
+msgid "Create a Page"
+msgstr "إنشاء صفحة"
+
+#: scrapper/templates/admin/fetch_news.html:128
+#: scrapper/templates/admin/fetch_news.html:162
+msgid "No Title"
+msgstr "لا يوجد عنوان"
+
+#: scrapper/templates/admin/fetch_news.html:131
+#: scrapper/templates/admin/fetch_news.html:165
+msgid "Published:"
+msgstr "نشر:"
+
+#: scrapper/templates/admin/fetch_news.html:131
+#: scrapper/templates/admin/fetch_news.html:165
+msgid "N/A"
+msgstr "غير متوفر"
+
+#: scrapper/templates/admin/fetch_news.html:135
+#: scrapper/templates/admin/fetch_news.html:169
+msgid "Unknown Source"
+msgstr "مصدر غير معروف"
+
+#: scrapper/wagtail_hooks.py:163
+msgid "Fetch Bing News"
+msgstr "جلب أخبار بنج"
+
+#: scrapper/wagtail_hooks.py:175
+msgid "Custom Tools"
+msgstr "أدوات مخصصة"
 
 #: wagtail_ai/forms.py:11
 msgid "No text provided - please enter some text before using AI features."
 msgstr ""
+"لم يتم تقديم نص - يرجى إدخال بعض النص قبل استخدام ميزات الذكاء الاصطناعي."
 
 #: wagtail_ai/forms.py:18 wagtail_ai/forms.py:19 wagtail_ai/views.py:117
 msgid "Invalid prompt provided."
-msgstr ""
+msgstr "تم تقديم طلب غير صحيح."
 
 #: wagtail_ai/forms.py:58
 msgid "Describe image using AI"
-msgstr ""
+msgstr "وصف الصورة باستخدام الذكاء الاصطناعي"
 
 #: wagtail_ai/models.py:12
 msgid "Replace content"
-msgstr ""
+msgstr "استبدال المحتوى"
 
 #: wagtail_ai/models.py:13
 msgid "Append after existing content"
-msgstr ""
+msgstr "إلحاق بعد المحتوى الموجود"
 
 #: wagtail_ai/models.py:22
 msgid ""
 "The prompt description, displayed alongside its label on the settings "
 "listing."
 msgstr ""
+"الوصف الفوري ، المعروض جنبا إلى جنب مع التسمية الخاصة به في قائمة الإعدادات."
 
 #: wagtail_ai/models.py:29
 msgid ""
 "The prompt text sent to the Large Language Model (e.g. ChatGPT) to generate "
 "content."
 msgstr ""
+"النص الفوري المرسل إلى نموذج اللغة الكبيرة (مثل ChatGPT) لإنشاء المحتوى."
 
 #: wagtail_ai/models.py:35
 msgid "The method used for processing the responses to the prompt."
-msgstr ""
+msgstr "الطريقة المستخدمة لمعالجة الردود على المطالبة."
 
 #: wagtail_ai/views.py:133
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "حدث خطأ غير متوقع."
 
 #: wagtail_word/forms.py:355
 msgid "Word Document"
-msgstr ""
+msgstr "مستند وورد"
 
 #: wagtail_word/forms.py:356
 msgid "Upload a word document"
-msgstr ""
+msgstr "تحميل مستند Word"
 
 #: wagtail_word/forms.py:373
 msgid "Invalid file extension"
-msgstr ""
+msgstr "ملحق الملف غير صالح"
 
 #: wagtail_word/forms.py:380
 msgid "Invalid .docx file"
-msgstr ""
+msgstr "ملف .docx غير صالح"
 
 #: wagtail_word/models.py:44
 msgid "Upload"
-msgstr ""
+msgstr "رفع"
 
 #: wagtail_word/models.py:45
 msgid "Edit"
-msgstr ""
+msgstr "تحرير"
 
 #: wagtail_word/models.py:46
 msgid "Promote"
-msgstr ""
+msgstr "ترقية"
 
 #: wagtail_word/models.py:47
 msgid "Settings"
-msgstr ""
+msgstr "اعدادات"
 
 #: wagtail_word/models.py:51
 msgid "Word Document Article"
-msgstr ""
+msgstr "مقالة مستند Word"
 
 #: wagtail_word/templates/base_word_document_page.html:55
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:62
 msgid "Search..."
-msgstr ""
+msgstr "بحث..."
 
 #: wagtail_word/templates/base_word_document_page.html:60
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:67
 msgid "Quick Links"
-msgstr ""
+msgstr "روابط سريعة"
 
 #: wagtail_word/templates/base_word_document_page.html:63
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:70
 msgid "Home"
-msgstr ""
+msgstr "وطن"
 
 #: wagtail_word/templates/base_word_document_page.html:64
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:71
 msgid "About Us"
-msgstr ""
+msgstr "من نحن"
 
 #: wagtail_word/templates/base_word_document_page.html:65
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:72
 msgid "Denti-Board"
-msgstr ""
+msgstr "لوحة اعدادات"
 
 #: wagtail_word/templates/base_word_document_page.html:66
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:73
 msgid "Top Blogs"
-msgstr ""
+msgstr "أفضل المدونات"
 
 #: wagtail_word/templates/base_word_document_page.html:71
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:78
 msgid "Recent Posts"
-msgstr ""
+msgstr "آخر المقالات"
 
 #: wagtail_word/templates/base_word_document_page.html:92
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:99
 msgid "No recent posts available."
-msgstr ""
+msgstr "لا توجد مشاركات حديثة متاحة."
 
 #: wagtail_word/templates/base_word_document_page.html:99
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:106
 msgid "Latest Gallery"
-msgstr ""
+msgstr "أحدث معرض"
 
 #: website/templates/coderedcms/blocks/film_strip_block.html:28
 #: website/templates/coderedcms/includes/pagination.html:8
 msgid "Previous"
-msgstr ""
+msgstr "سابق"
 
 #: website/templates/coderedcms/blocks/film_strip_block.html:31
 #: website/templates/coderedcms/includes/pagination.html:16
 msgid "Next"
-msgstr ""
+msgstr "التالي"
 
 #: website/templates/coderedcms/includes/classifier_dropdowns.html:5
 msgid "Filter by"
-msgstr ""
+msgstr "تصفية حسب"
 
 #: website/templates/coderedcms/includes/classifier_dropdowns.html:11
 msgid "Filter"
-msgstr ""
+msgstr "راووق"
 
 #: website/templates/coderedcms/includes/classifier_dropdowns.html:12
 #: website/templates/coderedcms/includes/classifier_nav.html:6
 msgid "All"
-msgstr ""
+msgstr "كل"
 
 #: website/templates/coderedcms/includes/form_honeypot.html:3
 msgid "Leave this blank if you are a human"
-msgstr ""
+msgstr "اترك هذا فارغا إذا كنت إنسانا"
 
 #: website/templates/coderedcms/includes/iframe_gmap.html:5
 msgid "Map of"
-msgstr ""
+msgstr "خريطة"
 
 #: website/templates/coderedcms/includes/pagination.html:12
 msgid "Page"
-msgstr ""
+msgstr "صفحة"
 
 #: website/templates/coderedcms/includes/pagination.html:12
 msgid "of"
-msgstr ""
+msgstr "من"
 
-#: website/templates/coderedcms/pages/base.html:149
+#: website/templates/coderedcms/pages/base.html:153
 msgid "Related"
-msgstr ""
+msgstr "ذات الصله"
 
 #: website/templates/coderedcms/pages/form_page_landing.html:5
 msgid "Thank You"
-msgstr ""
+msgstr "شكرا"
 
 #: website/templates/coderedcms/pages/form_page_landing.html:6
 msgid "We have successfully received your submission."
-msgstr ""
+msgstr "لقد تلقينا طلبك بنجاح."
 
 #: website/templates/coderedcms/pages/search.html:7
 #: website/templates/coderedcms/pages/search.html:14
 #: website/templates/coderedcms/pages/search.html:32
 #: website/templates/coderedcms/snippets/navbar.html:37
 msgid "Search"
-msgstr ""
+msgstr "بحث"
 
 #: website/templates/coderedcms/pages/search.html:7
 #: website/templates/coderedcms/pages/search.html:16
 msgid "Search for"
-msgstr ""
+msgstr "بحث"
 
 #: website/templates/coderedcms/pages/search.html:45
 msgid "All Results"
-msgstr ""
+msgstr "جميع النتائج"
 
 #: website/templates/coderedcms/pages/search.html:80
 msgid "No results found."
-msgstr ""
+msgstr "لم يتم العثور على نتائج."
 
 #: website/templates/coderedcms/widgets/checkbox_classifiers.html:31
 msgid "Organize Pages with Classifiers"
-msgstr ""
+msgstr "تنظيم الصفحات باستخدام المصنفات"
 
 #: website/templates/coderedcms/widgets/checkbox_classifiers.html:33
 msgid "Use Classifiers to create custom categories and filters."
-msgstr ""
+msgstr "استخدم المصنفات لإنشاء فئات وفلاتر مخصصة."
 
 #: website/templates/coderedcms/widgets/checkbox_classifiers.html:37
 msgid "Add Classifier"
-msgstr ""
-
-#: website/templates/wagtailadmin/login.html:5
-msgid "Sign in to"
-msgstr ""
+msgstr "إضافة مصنف"

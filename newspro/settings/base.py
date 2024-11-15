@@ -7,7 +7,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/5.1/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/5.1/ref/settings/
+https://docs.djngoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "wagtailseo",
     'wagtailmedia',
     'wagtail_word',
-    'news',
+    'scrapper',
     # Wagtail
     "wagtail.contrib.forms",
     'wagtail_localize',
@@ -62,7 +62,6 @@ INSTALLED_APPS = [
     'wagtail_ai',
     'debug_toolbar',
     'rosetta',# Add this line
-    "scrapper",
     # Django
     "django.contrib.admin",
     "django.contrib.auth",
@@ -153,7 +152,7 @@ AUTH_USER_MODEL = "custom_user.User"
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en"
 
 TIME_ZONE = "Europe/Istanbul"
 
@@ -231,8 +230,7 @@ BING_NEWS_API_KEY = os.getenv("BING_NEWS_API_KEY")
 # settings.py
 
 ROSETTA_ENABLE_TRANSLATION_SUGGESTIONS = True
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPENAI_PROMPT_TEMPLATE = 'Translate the following text from {from_language} to {to_language}:\n\n{text},  Ensure that the translation is suitable for a web application, with clear and relevant Arabic terms'
+AZURE_CLIENT_SECRET = "DyKiBjFhkd79pVIavqRKuguK8gEf43LoCoKGFKLyVhol0O0U1KnhJQQJ99AKACF24PCXJ3w3AAAbACOGWjz4"
 ROSETTA_SHOW_AT_ADMIN_PANEL = True
 ROSETTA_MESSAGES_PER_PAGE = 500
 
@@ -252,3 +250,7 @@ WAGTAIL_AI = {
         },
     },
 }
+
+LOCALE_PATHS = [
+    '/home/lotfikan/wiznewzx/locale',
+]
