@@ -1,0 +1,80 @@
+{% extends "coderedcms/pages/web_page.html" %}
+{% load wagtailcore_tags wagtailimages_tags coderedcms_tags static %}
+
+{% block content %}
+<div class="bg-light py-5" style="min-height: 100vh;">
+    <div class="container">
+        <h1 class="text-center text-primary">{{ self.title }}</h1>
+        {% if self.search_description %}
+            <p class="text-center text-muted">{{ self.search_description }}</p>
+        {% endif %}
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-10 col-lg-8">
+                <div class="card border-0 shadow-lg mb-5">
+                    {% if self.cover_image %}
+                        <img src="{{ self.cover_image.file.url }}" class="card-img-top rounded-top" alt="{{ self.title }}">
+                    {% else %}
+                        <img src="{% static 'nopic.png' %}" class="card-img-top rounded-top" alt="No image available">
+                    {% endif %}
+                    <div class="card-body">
+                        {% if self.caption %}
+                            <h5 class="card-title text-center text-secondary">{{ self.caption|richtext }}</h5>
+                        {% endif %}
+                        {% if self.body %}
+                            <div class="card-text text-justify">{{ self.body|richtext }}</div>
+                        {% endif %}
+                        <p class="text-muted mt-4 text-center">
+                            {% if self.source %}
+                                <small>Source: {{ self.source }}</small><br>
+                            {% endif %}
+                            {% if self.publication_date %}
+                                <small>Published on: {{ self.publication_date }}</small>
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+
+                {% if related_proposals %}
+                    <div class="card border-0 shadow-sm mb-5">
+                        <div class="card-body">
+                            <h3 class="card-title text-center text-primary">Related Proposals</h3>
+                            <ul class="list-group list-group-flush">
+                                {% for proposal in related_proposals %}
+                                    <li class="list-group-item">
+                                        <a href="{{ proposal.url }}">{{ proposal.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <!-- Comments Section -->
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <!-- Include your comments template or code here -->
+                        <h4 class="card-title">Comments</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Navigation to Next and Previous Proposals -->
+    <div class="d-flex justify-content-between mt-4">
+        {% if previous_page %}
+            <a href="{{ previous_page.url }}" class="btn btn-secondary">&laquo; Previous</a>
+        {% else %}
+            <span></span>
+        {% endif %}
+        {% if next_page %}
+            <a href="{{ next_page.url }}" class="btn btn-secondary">Next &raquo;</a>
+        {% else %}
+            <span></span>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

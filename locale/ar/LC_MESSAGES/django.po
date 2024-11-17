@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-15 09:54+0000\n"
-"PO-Revision-Date: 2024-11-15 14:05+0300\n"
-"Last-Translator: test wisdar <test@wisdar.ar>\n"
+"POT-Creation-Date: 2024-11-17 08:41+0300\n"
+"PO-Revision-Date: 2024-11-17 09:00+0300\n"
+"Last-Translator: lofa lofu <lofa@lo.cm>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -19,412 +19,2065 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Translated-Using: django-rosetta 0.10.1\n"
 
+#: coderedcms/blocks/__init__.py:72 coderedcms/blocks/__init__.py:106
+#: coderedcms/blocks/__init__.py:128 coderedcms/blocks/__init__.py:146
+msgid "HTML"
+msgstr "أتش تي أم"
+
+#: coderedcms/blocks/__init__.py:152 coderedcms/blocks/__init__.py:153
+#: coderedcms/blocks/__init__.py:154 coderedcms/blocks/__init__.py:155
+#: coderedcms/blocks/__init__.py:156 coderedcms/blocks/__init__.py:157
+#: coderedcms/blocks/__init__.py:158 coderedcms/blocks/__init__.py:159
+#: coderedcms/blocks/__init__.py:160 coderedcms/blocks/__init__.py:161
+#: coderedcms/blocks/__init__.py:162 coderedcms/blocks/__init__.py:163
+#: coderedcms/wagtail_flexible_forms/blocks.py:255
+#: coderedcms/wagtail_flexible_forms/blocks.py:256
+#: coderedcms/wagtail_flexible_forms/blocks.py:257
+#: coderedcms/wagtail_flexible_forms/blocks.py:258
+#: coderedcms/wagtail_flexible_forms/blocks.py:259
+#: coderedcms/wagtail_flexible_forms/blocks.py:260
+#: coderedcms/wagtail_flexible_forms/blocks.py:261
+#: coderedcms/wagtail_flexible_forms/blocks.py:262
+#: coderedcms/wagtail_flexible_forms/blocks.py:263
+#: coderedcms/wagtail_flexible_forms/blocks.py:264
+#: coderedcms/wagtail_flexible_forms/blocks.py:265
+#: coderedcms/wagtail_flexible_forms/blocks.py:266
+msgid "Fields"
+msgstr "حقول"
+
+#: coderedcms/blocks/base_blocks.py:122
+msgid "Button Style"
+msgstr "نمط الزر"
+
+#: coderedcms/blocks/base_blocks.py:128 coderedcms/models/page_models.py:1324
+msgid "Button Size"
+msgstr "حجم الزر"
+
+#: coderedcms/blocks/base_blocks.py:144
+#: coderedcms/models/snippet_models.py:320
+#: coderedcms/models/snippet_models.py:366
+msgid "Custom CSS Class"
+msgstr "فئة CSS المخصصة"
+
+#: coderedcms/blocks/base_blocks.py:149
+#: coderedcms/models/snippet_models.py:120
+#: coderedcms/models/snippet_models.py:286
+#: coderedcms/models/snippet_models.py:325
+#: coderedcms/models/snippet_models.py:371
+#: coderedcms/models/snippet_models.py:478
+msgid "Custom ID"
+msgstr "معرف مخصص"
+
+#: coderedcms/blocks/base_blocks.py:156
+#| msgid "Settings"
+msgid "Advanced Settings"
+msgstr "الإعدادات المتقدمة"
+
+#: coderedcms/blocks/base_blocks.py:169 coderedcms/models/page_models.py:274
+#| msgid "Related"
+msgid "Template"
+msgstr "قالب"
+
+#: coderedcms/blocks/base_blocks.py:185
+msgid "Tracking Event Category"
+msgstr "فئة حدث التتبع"
+
+#: coderedcms/blocks/base_blocks.py:190
+msgid "Tracking Event Label"
+msgstr "تتبع تسمية الحدث"
+
+#: coderedcms/blocks/base_blocks.py:203
+msgid "Column Breakpoint"
+msgstr "نقطة توقف العمود"
+
+#: coderedcms/blocks/base_blocks.py:205
+msgid ""
+"Screen size at which the column will expand horizontally or stack "
+"vertically."
+msgstr "حجم الشاشة الذي سيتم فيه توسيع العمود أفقيا أو تكديسه عموديا."
+
+#: coderedcms/blocks/base_blocks.py:271 coderedcms/models/page_models.py:411
+#: coderedcms/models/snippet_models.py:375
+#: coderedcms/models/snippet_models.py:504
+msgid "Content"
+msgstr "محتوى"
+
+#: coderedcms/blocks/base_blocks.py:324
+#| msgid "Page"
+msgid "Page link"
+msgstr "رابط الصفحة"
+
+#: coderedcms/blocks/base_blocks.py:328 coderedcms/blocks/html_blocks.py:49
+#| msgid "Word Document"
+msgid "Document link"
+msgstr "ارتباط المستند"
+
+#: coderedcms/blocks/base_blocks.py:333
+msgid "Other link"
+msgstr "روابط أخرى"
+
+#: coderedcms/blocks/base_blocks.py:338 coderedcms/blocks/content_blocks.py:45
+#| msgid "No Title"
+msgid "Title"
+msgstr "عنوان"
+
+#: coderedcms/blocks/content_blocks.py:40
+#: coderedcms/blocks/content_blocks.py:154
+#: coderedcms/blocks/content_blocks.py:260
+#: coderedcms/blocks/html_blocks.py:183 coderedcms/blocks/html_blocks.py:189
+#: coderedcms/blocks/html_blocks.py:198
+#: coderedcms/models/snippet_models.py:104
+msgid "Image"
+msgstr "صورة"
+
+#: coderedcms/blocks/content_blocks.py:50
+msgid "Subtitle"
+msgstr "عنوان فرعي"
+
+#: coderedcms/blocks/content_blocks.py:54
+#: coderedcms/models/snippet_models.py:582
+msgid "Body"
+msgstr "جسم"
+
+#: coderedcms/blocks/content_blocks.py:60
+#| msgid "Quick Links"
+msgid "Links"
+msgstr "الصلات"
+
+#: coderedcms/blocks/content_blocks.py:66
+msgid "Card"
+msgstr "بطاقة"
+
+#: coderedcms/blocks/content_blocks.py:78
+#: coderedcms/models/snippet_models.py:45
+#: coderedcms/models/snippet_models.py:96
+msgid "Carousel"
+msgstr "دائري"
+
+#: coderedcms/blocks/content_blocks.py:91
+#: coderedcms/models/snippet_models.py:233
+msgid "Film Strip"
+msgstr "شريط الفيلم"
+
+#: coderedcms/blocks/content_blocks.py:103
+msgid "Image Collection"
+msgstr "مجموعة الصور"
+
+#: coderedcms/blocks/content_blocks.py:109
+#| msgid "Latest Gallery"
+msgid "Image Gallery"
+msgstr "معرض الصور"
+
+#: coderedcms/blocks/content_blocks.py:120
+msgid "Modal heading"
+msgstr "عنوان مشروط"
+
+#: coderedcms/blocks/content_blocks.py:124
+#| msgid "Replace content"
+msgid "Modal content"
+msgstr "محتوى مشروط"
+
+#: coderedcms/blocks/content_blocks.py:131
+msgid "Simple Text"
+msgstr "نص بسيط"
+
+#: coderedcms/blocks/content_blocks.py:137
+msgid "Modal footer"
+msgstr "تذييل مشروط"
+
+#: coderedcms/blocks/content_blocks.py:143
+msgid "Modal"
+msgstr "مشروط"
+
+#: coderedcms/blocks/content_blocks.py:150
+msgid "Display text"
+msgstr "عرض النص"
+
+#: coderedcms/blocks/content_blocks.py:165
+#: coderedcms/blocks/html_blocks.py:108 coderedcms/forms.py:32
+#: coderedcms/wagtail_flexible_forms/blocks.py:61
+msgid "URL"
+msgstr "الرابط"
+
+#: coderedcms/blocks/content_blocks.py:170
+#| msgid "Personal info"
+msgid "External Link"
+msgstr "روابط خارجية"
+
+#: coderedcms/blocks/content_blocks.py:179
+#: coderedcms/templates/coderedcms/includes/pagination.html:12
+#: website/templates/coderedcms/includes/pagination.html:12
+msgid "Page"
+msgstr "صفحة"
+
+#: coderedcms/blocks/content_blocks.py:184
+#| msgid "Page"
+msgid "Page Link"
+msgstr "رابط الصفحة"
+
+#: coderedcms/blocks/content_blocks.py:193
+#| msgid "Word Document"
+msgid "Document"
+msgstr "مستند"
+
+#: coderedcms/blocks/content_blocks.py:198
+#| msgid "Word Document"
+msgid "Document Link"
+msgstr "رابط المستند"
+
+#: coderedcms/blocks/content_blocks.py:213
+msgid "Sub-links"
+msgstr "الروابط الفرعية"
+
+#: coderedcms/blocks/content_blocks.py:223
+msgid "External link with sub-links"
+msgstr "رابط خارجي مع روابط فرعية"
+
+#: coderedcms/blocks/content_blocks.py:234
+msgid "Show child pages"
+msgstr "إظهار الصفحات الفرعية"
+
+#: coderedcms/blocks/content_blocks.py:236
+msgid ""
+"Automatically show a link to the Page’s child pages as a dropdown menu."
+msgstr "عرض رابط إلى الصفحات الفرعية للصفحة تلقائيا كقائمة منسدلة."
+
+#: coderedcms/blocks/content_blocks.py:241
+msgid "Page link with sub-links"
+msgstr "رابط الصفحة مع الروابط الفرعية"
+
+#: coderedcms/blocks/content_blocks.py:250
+msgid "Document link with sub-links"
+msgstr "ارتباط المستند مع الروابط الفرعية"
+
+#: coderedcms/blocks/content_blocks.py:265
+#: coderedcms/models/snippet_models.py:49
+#: coderedcms/models/snippet_models.py:157
+#: coderedcms/models/snippet_models.py:205
+#: coderedcms/models/snippet_models.py:237
+#: coderedcms/models/snippet_models.py:315
+#: coderedcms/models/snippet_models.py:361
+#: coderedcms/models/snippet_models.py:408
+#: coderedcms/models/snippet_models.py:433
+#: coderedcms/models/snippet_models.py:461
+#: coderedcms/models/snippet_models.py:500
+#: coderedcms/wagtail_flexible_forms/blocks.py:274
+msgid "Name"
+msgstr "اسم"
+
+#: coderedcms/blocks/content_blocks.py:270
+#| msgid "No Description"
+msgid "Description"
+msgstr "وصف"
+
+#: coderedcms/blocks/content_blocks.py:274
+msgid "Price"
+msgstr "ثمن"
+
+#: coderedcms/blocks/content_blocks.py:275
+msgid "Any text here. Include currency sign if desired."
+msgstr "أي نص هنا. قم بتضمين علامة العملة إذا رغبت في ذلك."
+
+#: coderedcms/blocks/content_blocks.py:281
+msgid "Price List Item"
+msgstr "بند قائمة الأسعار"
+
+#: coderedcms/blocks/content_blocks.py:292
+msgid "Heading"
+msgstr "عنوان"
+
+#: coderedcms/blocks/content_blocks.py:298
+msgid "Items"
+msgstr "العناصر"
+
+#: coderedcms/blocks/content_blocks.py:304
+msgid "Price List"
+msgstr "قائمة الأسعار"
+
+#: coderedcms/blocks/content_blocks.py:316
+msgid "Show content walls on children pages?"
+msgstr "إظهار جدران المحتوى على صفحات الأطفال؟"
+
+#: coderedcms/blocks/content_blocks.py:318
+msgid ""
+"If this is checked, the content walls will be displayed on all children "
+"pages of this page."
+msgstr ""
+"إذا تم تحديد ذلك ، عرض جدران المحتوى على جميع الصفحات الفرعية لهذه الصفحة."
+
+#: coderedcms/blocks/content_blocks.py:325
+#: coderedcms/models/snippet_models.py:496
+#: coderedcms/models/snippet_models.py:527
+msgid "Content Wall"
+msgstr "حائط المحتوى"
+
+#: coderedcms/blocks/content_blocks.py:338
+#: coderedcms/models/snippet_models.py:403
+#: coderedcms/models/snippet_models.py:404
+#| msgid "Replace content"
+msgid "Reusable Content"
+msgstr "محتوى قابل لإعادة الاستخدام"
+
+#: coderedcms/blocks/html_blocks.py:38
+msgid "Button Link"
+msgstr "رابط الزر"
+
+#: coderedcms/blocks/html_blocks.py:57
+msgid "Download"
+msgstr "تحميل"
+
+#: coderedcms/blocks/html_blocks.py:68
+#| msgid "Search Query:"
+msgid "Search query"
+msgstr "استعلام البحث"
+
+#: coderedcms/blocks/html_blocks.py:70
+msgid "Address or search term used to find your location on the map."
+msgstr "العنوان أو مصطلح البحث المستخدم للعثور على موقعك على الخريطة."
+
+#: coderedcms/blocks/html_blocks.py:76
+msgid "Map title"
+msgstr "عنوان الخريطة"
+
+#: coderedcms/blocks/html_blocks.py:77
+msgid "Map title for screen readers, ex: \"Map to Goodale Park\""
+msgstr ""
+"عنوان الخريطة لبرامج قراءة الشاشة، على سبيل المثال: \"خريطة إلى Goodale "
+"Park\""
+
+#: coderedcms/blocks/html_blocks.py:82
+msgid "Google place ID"
+msgstr "معرف مكان Google"
+
+#: coderedcms/blocks/html_blocks.py:83
+msgid "Requires API key to use place ID."
+msgstr "يتطلب مفتاح API لاستخدام معرف المكان."
+
+#: coderedcms/blocks/html_blocks.py:88
+msgid "Map zoom level"
+msgstr "مستوى تكبير الخريطة"
+
+#: coderedcms/blocks/html_blocks.py:90 coderedcms/models/page_models.py:2180
+msgid ""
+"Requires API key to use zoom. 1: World, 5: Landmass/continent, 10: City, 15:"
+" Streets, 20: Buildings"
+msgstr ""
+"يتطلب مفتاح API لاستخدام التكبير. 1: العالم ، 5: اليابسة / القارة ، 10: "
+"المدينة ، 15: الشوارع ، 20: المباني"
+
+#: coderedcms/blocks/html_blocks.py:98
+msgid "Google Map"
+msgstr "خريطة جوجل"
+
+#: coderedcms/blocks/html_blocks.py:110
+msgid "Link to a YouTube/Vimeo video, tweet, facebook post, etc."
+msgstr "رابط إلى فيديو YouTube / Vimeo ، تغريدة ، منشور على Facebook ، إلخ."
+
+#: coderedcms/blocks/html_blocks.py:117
+msgid "Embed Media"
+msgstr "تضمين الوسائط"
+
+#: coderedcms/blocks/html_blocks.py:127 coderedcms/blocks/html_blocks.py:143
+#: coderedcms/blocks/html_blocks.py:159 coderedcms/forms.py:26
+msgid "Text"
+msgstr "نص"
+
+#: coderedcms/blocks/html_blocks.py:133
+msgid "Heading 1"
+msgstr "تسديد بالرأس 1"
+
+#: coderedcms/blocks/html_blocks.py:149
+msgid "Heading 2"
+msgstr "تسديد بالرأس 2"
+
+#: coderedcms/blocks/html_blocks.py:165
+msgid "Heading 3"
+msgstr "تسديد بالرأس 3"
+
+#: coderedcms/blocks/html_blocks.py:203
+msgid "Alternate text to show if the image doesn’t load"
+msgstr "نص بديل لإظهار ما إذا لم يتم تحميل الصورة"
+
+#: coderedcms/blocks/html_blocks.py:209
+msgid "Image Link"
+msgstr "رابط الصورة"
+
+#: coderedcms/blocks/html_blocks.py:220
+msgid "Parent page"
+msgstr "الصفحة الرئيسية"
+
+#: coderedcms/blocks/html_blocks.py:222
+msgid ""
+"Show a preview of pages that are children of the selected page. Uses "
+"ordering specified in the page’s LAYOUT tab."
+msgstr ""
+"إظهار معاينة للصفحات التابعة للصفحة المحددة. يستخدم الترتيب المحدد في علامة "
+"التبويب LAYOUT الخاصة بالصفحة."
+
+#: coderedcms/blocks/html_blocks.py:228
+#| msgid "Add Classifier"
+msgid "Classified as"
+msgstr "مصنفة على أنها"
+
+#: coderedcms/blocks/html_blocks.py:229
+msgid "Only show pages that are classified with this term."
+msgstr "عرض الصفحات المصنفة بهذا المصطلح فقط."
+
+#: coderedcms/blocks/html_blocks.py:235
+msgid "Show body preview"
+msgstr "إظهار معاينة النص الأساسي"
+
+#: coderedcms/blocks/html_blocks.py:239
+msgid "Number of pages to show"
+msgstr "عدد الصفحات المراد عرضها"
+
+#: coderedcms/blocks/html_blocks.py:245
+#| msgid "Latest Gallery"
+msgid "Latest Pages"
+msgstr "أحدث الصفحات"
+
+#: coderedcms/blocks/html_blocks.py:287
+msgid "Page to preview"
+msgstr "صفحة للمعاينة"
+
+#: coderedcms/blocks/html_blocks.py:288
+msgid "Show a mini preview of the selected page."
+msgstr "إظهار معاينة مصغرة للصفحة المحددة."
+
+#: coderedcms/blocks/html_blocks.py:294
+msgid "Page Preview"
+msgstr "معاينة الصفحة"
+
+#: coderedcms/blocks/html_blocks.py:305
+msgid "Quote Text"
+msgstr "نص الاقتباس"
+
+#: coderedcms/blocks/html_blocks.py:310 coderedcms/models/page_models.py:739
+#: website/models.py:324
+msgid "Author"
+msgstr "كاتب"
+
+#: coderedcms/blocks/html_blocks.py:316
+msgid "Quote"
+msgstr "استشهد"
+
+#: coderedcms/blocks/layout_blocks.py:28
+msgid "Column size"
+msgstr "حجم العمود"
+
+#: coderedcms/blocks/layout_blocks.py:46 coderedcms/blocks/layout_blocks.py:65
+#: coderedcms/blocks/layout_blocks.py:82
+msgid "Full width"
+msgstr "العرض الكامل"
+
+#: coderedcms/blocks/layout_blocks.py:52
+msgid "Responsive Grid Row"
+msgstr "صف الشبكة المتجاوب"
+
+#: coderedcms/blocks/layout_blocks.py:71
+msgid "Card Grid"
+msgstr "شبكة البطاقة"
+
+#: coderedcms/blocks/layout_blocks.py:86
+msgid "Parallax Effect"
+msgstr "تأثير المنظر"
+
+#: coderedcms/blocks/layout_blocks.py:88
+msgid ""
+"Background images scroll slower than foreground images, creating an illusion"
+" of depth."
+msgstr ""
+"يتم تمرير صور الخلفية بشكل أبطأ من الصور الأمامية ، مما يخلق وهما بالعمق."
+
+#: coderedcms/blocks/layout_blocks.py:95
+msgid "Tile background image"
+msgstr "صورة خلفية اللوحة"
+
+#: coderedcms/blocks/layout_blocks.py:100
+#: coderedcms/models/snippet_models.py:109
+#: coderedcms/models/snippet_models.py:269
+msgid "Background color"
+msgstr "لون الخلفية"
+
+#: coderedcms/blocks/layout_blocks.py:101
+#: coderedcms/blocks/layout_blocks.py:107
+#: coderedcms/models/snippet_models.py:110
+#: coderedcms/models/snippet_models.py:270
+#: coderedcms/models/snippet_models.py:276
+msgid "Hexadecimal, rgba, or CSS color notation (e.g. #ff0011)"
+msgstr "تدوين اللون السداسي العشري أو rgba أو CSS (على سبيل المثال #ff0011)"
+
+#: coderedcms/blocks/layout_blocks.py:106
+#: coderedcms/models/snippet_models.py:275
+msgid "Text color"
+msgstr "لون النص"
+
+#: coderedcms/blocks/stream_form_blocks.py:20
+msgid "Condition Trigger ID"
+msgstr "معرف مشغل الشرط"
+
+#: coderedcms/blocks/stream_form_blocks.py:22
+msgid ""
+"The \"Custom ID\" of another field that that will trigger this field to be "
+"shown/hidden."
+msgstr "\"المعرف المخصص\" لحقل آخر سيؤدي إلى إظهار / إخفاء هذا الحقل."
+
+#: coderedcms/blocks/stream_form_blocks.py:29
+msgid "Condition Trigger Value"
+msgstr "قيمة مشغل الشرط"
+
+#: coderedcms/blocks/stream_form_blocks.py:31
+msgid ""
+"The value of the field in \"Condition Trigger ID\" that will trigger this "
+"field to be shown."
+msgstr "قيمة الحقل في \"معرف مشغل الشرط\" الذي سيؤدي إلى عرض هذا الحقل."
+
+#: coderedcms/blocks/stream_form_blocks.py:54
+msgid "Text or Email input"
+msgstr "إدخال النص أو البريد الإلكتروني"
+
+#: coderedcms/blocks/stream_form_blocks.py:62 coderedcms/forms.py:29
+msgid "Multi-line text"
+msgstr "نص متعدد الأسطر"
+
+#: coderedcms/blocks/stream_form_blocks.py:70
+msgid "Numbers only"
+msgstr "أرقام فقط"
+
+#: coderedcms/blocks/stream_form_blocks.py:78
+msgid "Single Checkbox"
+msgstr "مربع اختيار واحد"
+
+#: coderedcms/blocks/stream_form_blocks.py:86
+msgid "Radios"
+msgstr "اجهزه الراديو"
+
+#: coderedcms/blocks/stream_form_blocks.py:94
+msgid "Dropdown"
+msgstr "القائمة المنسدلة"
+
+#: coderedcms/blocks/stream_form_blocks.py:102 coderedcms/forms.py:38
+msgid "Checkboxes"
+msgstr "مربعات الاختيار"
+
+#: coderedcms/blocks/stream_form_blocks.py:110 coderedcms/forms.py:48
+#: scrapper/wagtail_hooks.py:30
+msgid "Date"
+msgstr "تاريخ"
+
+#: coderedcms/blocks/stream_form_blocks.py:121 coderedcms/forms.py:49
+msgid "Time"
+msgstr "الوقت"
+
+#: coderedcms/blocks/stream_form_blocks.py:132
+msgid "Date and Time"
+msgstr "التاريخ والوقت"
+
+#: coderedcms/blocks/stream_form_blocks.py:143
+#| msgid "Upload"
+msgid "Image Upload"
+msgstr "تحميل الصور"
+
+#: coderedcms/blocks/stream_form_blocks.py:151
+msgid "Secure File Upload"
+msgstr "تحميل آمن للملفات"
+
+#: coderedcms/forms.py:28
+msgid "Single line text"
+msgstr "نص سطر واحد"
+
+#: coderedcms/forms.py:30 coderedcms/wagtail_flexible_forms/blocks.py:60
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: coderedcms/forms.py:31
+msgid "Number - only allows integers"
+msgstr "الرقم - يسمح فقط بالأعداد الصحيحة"
+
+#: coderedcms/forms.py:36 coderedcms/wagtail_flexible_forms/blocks.py:120
+msgid "Choice"
+msgstr "اختيار"
+
+#: coderedcms/forms.py:39
+msgid "Drop down"
+msgstr "القائمة المنسدلة"
+
+#: coderedcms/forms.py:40 coderedcms/wagtail_flexible_forms/blocks.py:126
+msgid "Radio buttons"
+msgstr "ازرار"
+
+#: coderedcms/forms.py:41
+msgid "Multiple select"
+msgstr "تحديد متعدد"
+
+#: coderedcms/forms.py:42
+msgid "Single checkbox"
+msgstr "مربع اختيار واحد"
+
+#: coderedcms/forms.py:46
+msgid "Date & Time"
+msgstr "التاريخ والوقت"
+
+#: coderedcms/forms.py:50
+msgid "Date and time"
+msgstr "التاريخ والوقت"
+
+#: coderedcms/forms.py:54
+#| msgid "Upload"
+msgid "File Upload"
+msgstr "تحميل الملف"
+
+#: coderedcms/forms.py:55
+msgid "Secure File - login required to access uploaded files"
+msgstr "ملف آمن - تسجيل الدخول مطلوب للوصول إلى الملفات التي تم تحميلها"
+
+#: coderedcms/forms.py:58 coderedcms/wagtail_flexible_forms/blocks.py:267
+msgid "Other"
+msgstr "آخر"
+
+#: coderedcms/forms.py:59
+msgid "Hidden field"
+msgstr "حقل مخفي"
+
+#: coderedcms/forms.py:69 coderedcms/forms.py:70
+msgid "Submitted file is not allowed."
+msgstr "الملف المقدم غير مسموح به."
+
+#: coderedcms/forms.py:185
+msgid "field type"
+msgstr "نوع الحقل"
+
+#: coderedcms/forms.py:197 coderedcms/templates/coderedcms/pages/search.html:7
+#: coderedcms/templates/coderedcms/pages/search.html:14
+#: coderedcms/templates/coderedcms/pages/search.html:32
+#: coderedcms/templates/coderedcms/snippets/navbar.html:37
+#: website/templates/admin/fetch_bing_news.html:84
+#: website/templates/coderedcms/pages/search.html:7
+#: website/templates/coderedcms/pages/search.html:14
+#: website/templates/coderedcms/pages/search.html:32
+#: website/templates/coderedcms/snippets/navbar.html:37
+msgid "Search"
+msgstr "بحث"
+
+#: coderedcms/forms.py:203
+#| msgid "Page"
+msgid "Page type"
+msgstr "نوع الصفحة"
+
+#: coderedcms/importexport.py:36
+msgid "File to import"
+msgstr "ملف للاستيراد"
+
+#: coderedcms/importexport.py:41
+msgid "Destination parent page"
+msgstr "الصفحة الرئيسية الوجهة"
+
+#: coderedcms/importexport.py:42
+msgid "Imported pages will be created as children of this page."
+msgstr "سيتم إنشاء الصفحات المستوردة كصفحات فرعية لهذه الصفحة."
+
+#: coderedcms/models/integration_models.py:124
+msgid "List"
+msgstr "قائمة"
+
+#: coderedcms/models/page_models.py:131
+msgid "CodeRed Tag"
+msgstr "كودريد تاغ"
+
+#: coderedcms/models/page_models.py:145
+#| msgid "Create a Page"
+msgid "CodeRed Page"
+msgstr "صفحة كودريد"
+
+#: coderedcms/models/page_models.py:173
+msgid "Cover image"
+msgstr "صورة الغلاف"
+
+#: coderedcms/models/page_models.py:191
+msgid "Default Ordering"
+msgstr "الترتيب الافتراضي"
+
+#: coderedcms/models/page_models.py:192
+msgid "Date first published, newest to oldest"
+msgstr "تاريخ النشر لأول مرة، من الأحدث إلى الأقدم"
+
+#: coderedcms/models/page_models.py:193
+msgid "Date first published, oldest to newest"
+msgstr "تاريخ النشر لأول مرة، من الأقدم إلى الأحدث"
+
+#: coderedcms/models/page_models.py:194
+msgid "Date updated, newest to oldest"
+msgstr "تاريخ التحديث، من الأحدث إلى الأقدم"
+
+#: coderedcms/models/page_models.py:195
+msgid "Date updated, oldest to newest"
+msgstr "تاريخ التحديث، من الأقدم إلى الأحدث"
+
+#: coderedcms/models/page_models.py:196
+msgid "Title, alphabetical"
+msgstr "العنوان، أبجديا"
+
+#: coderedcms/models/page_models.py:197
+msgid "Title, reverse alphabetical"
+msgstr "العنوان، عكس الترتيب الأبجدي"
+
+#: coderedcms/models/page_models.py:201
+msgid "Show list of child pages"
+msgstr "عرض قائمة الصفحات الفرعية"
+
+#: coderedcms/models/page_models.py:209
+#| msgid "Organize Pages with Classifiers"
+msgid "Order child pages by classifier"
+msgstr "ترتيب الصفحات الفرعية حسب المصنف"
+
+#: coderedcms/models/page_models.py:211
+msgid ""
+"Child pages will first be sorted following the order of this classifier’s "
+"terms (from Snippets > Classifiers)."
+msgstr ""
+"سيتم أولا فرز الصفحات الفرعية باتباع ترتيب مصطلحات هذا المصنف (من المقتطفات "
+"> المصنفات)."
+
+#: coderedcms/models/page_models.py:220
+msgid "Order child pages by"
+msgstr "ترتيب الصفحات الفرعية حسب"
+
+#: coderedcms/models/page_models.py:221
+msgid "Child pages will then be sorted by this attribute."
+msgstr "سيتم بعد ذلك ترتيب الصفحات الفرعية حسب هذه السمة."
+
+#: coderedcms/models/page_models.py:225
+msgid "Number per page"
+msgstr "الرقم لكل صفحة"
+
+#: coderedcms/models/page_models.py:230
+#| msgid "Filter by"
+msgid "Filter child pages by"
+msgstr "تصفية الصفحات الفرعية حسب"
+
+#: coderedcms/models/page_models.py:231
+msgid "Enable filtering child pages by these classifiers."
+msgstr "قم بتمكين تصفية الصفحات الفرعية بواسطة هذه المصنفات."
+
+#: coderedcms/models/page_models.py:247
+msgid "Show list of related pages"
+msgstr "عرض قائمة الصفحات ذات الصلة"
+
+#: coderedcms/models/page_models.py:252
+msgid "Number of related pages to show"
+msgstr "عدد الصفحات ذات الصلة المراد عرضها"
+
+#: coderedcms/models/page_models.py:261
+msgid "Preferred related classifier term"
+msgstr "مصطلح المصنف المفضل ذي الصلة"
+
+#: coderedcms/models/page_models.py:263
+msgid ""
+"When getting related pages, pages with this term will be weighted over other"
+" classifier terms. By default, pages with the greatest number of classifiers"
+" in common are ranked highest."
+msgstr ""
+"عند الحصول على الصفحات ذات الصلة ، سيتم ترجيح الصفحات التي تحتوي على هذا "
+"المصطلح على مصطلحات التصنيف الأخرى. بشكل افتراضي ، يتم ترتيب الصفحات التي "
+"تحتوي على أكبر عدد من المصنفات المشتركة في المرتبة الأعلى."
+
+#: coderedcms/models/page_models.py:293
+#: coderedcms/models/snippet_models.py:146
+#| msgid "Add Classifier"
+msgid "Classifiers"
+msgstr "المصنفات"
+
+#: coderedcms/models/page_models.py:295
+msgid ""
+"Categorize and group pages together with classifiers. Used to organize and "
+"filter pages across the site."
+msgstr ""
+"تصنيف الصفحات وتجميعها مع المصنفات. تستخدم لتنظيم وتصفية الصفحات عبر الموقع."
+
+#: coderedcms/models/page_models.py:302
+msgid "Tags"
+msgstr "العلامات"
+
+#: coderedcms/models/page_models.py:303
+msgid "Used to organize pages across the site."
+msgstr "تستخدم لتنظيم الصفحات عبر الموقع."
+
+#: coderedcms/models/page_models.py:314
+msgid "Content Walls"
+msgstr "جدران المحتوى"
+
+#: coderedcms/models/page_models.py:349
+msgid "Visual Design"
+msgstr "التصميم المرئي"
+
+#: coderedcms/models/page_models.py:361
+msgid "Show Child Pages"
+msgstr "إظهار الصفحات الفرعية"
+
+#: coderedcms/models/page_models.py:369
+#| msgid "Related"
+msgid "Related Pages"
+msgstr "صفحات ذات صلة"
+
+#: coderedcms/models/page_models.py:413
+#| msgid "Add Classifier"
+msgid "Classify"
+msgstr "جنس"
+
+#: coderedcms/models/page_models.py:414
+msgid "Layout"
+msgstr "تخطيط"
+
+#: coderedcms/models/page_models.py:415
+msgid "SEO"
+msgstr "سيو"
+
+#: coderedcms/models/page_models.py:417 wagtail_word/models.py:47
+msgid "Settings"
+msgstr "اعدادات"
+
+#: coderedcms/models/page_models.py:670
+#| msgid "Create a Page"
+msgid "CodeRed Web Page"
+msgstr "صفحة ويب CodeRed"
+
+#: coderedcms/models/page_models.py:712
+#| msgid "Word Document Article"
+msgid "CodeRed Article"
+msgstr "المادة المرمزة"
+
+#: coderedcms/models/page_models.py:731
+msgid "Caption"
+msgstr "التسميه التوضيحيه"
+
+#: coderedcms/models/page_models.py:744
+msgid "Display author as"
+msgstr "عرض المؤلف ك"
+
+#: coderedcms/models/page_models.py:745
+msgid "Override how the author’s name displays on this article."
+msgstr "تجاوز كيفية عرض اسم المؤلف في هذه المقالة."
+
+#: coderedcms/models/page_models.py:750
+msgid "Display publish date"
+msgstr "عرض تاريخ النشر"
+
+#: coderedcms/models/page_models.py:836
+msgid "Publication Info"
+msgstr "معلومات النشر"
+
+#: coderedcms/models/page_models.py:847
+#| msgid "Article Image"
+msgid "CodeRed Article Index Page"
+msgstr "صفحة فهرس مقالة CodeRed"
+
+#: coderedcms/models/page_models.py:861
+msgid "Show images"
+msgstr "عرض الصور"
+
+#: coderedcms/models/page_models.py:868
+msgid "Show author and date info"
+msgstr "إظهار معلومات المؤلف والتاريخ"
+
+#: coderedcms/models/page_models.py:872
+msgid "Show preview text"
+msgstr "إظهار نص المعاينة"
+
+#: coderedcms/models/page_models.py:883
+msgid "Child page display"
+msgstr "عرض الصفحة الفرعية"
+
+#: coderedcms/models/page_models.py:890
+msgid "CodeRed Event"
+msgstr "حدث CodeRed"
+
+#: coderedcms/models/page_models.py:896
+msgid "The color that the event will use when displayed on a calendar."
+msgstr "اللون الذي سيستخدمه الحدث عند عرضه في تقويم."
+
+#: coderedcms/models/page_models.py:899 coderedcms/models/page_models.py:2022
+#| msgid "email address"
+msgid "Address"
+msgstr "عنوان"
+
+#: coderedcms/models/page_models.py:906
+msgid "Event information"
+msgstr "معلومات الحدث"
+
+#: coderedcms/models/page_models.py:911
+#| msgid "Latest Articles"
+msgid "Dates and times"
+msgstr "التواريخ والأوقات"
+
+#: coderedcms/models/page_models.py:1047
+msgid "Details"
+msgstr "التفاصيل"
+
+#: coderedcms/models/page_models.py:1117
+msgid "CodeRed Event Index Page"
+msgstr "صفحة فهرس أحداث CodeRed"
+
+#: coderedcms/models/page_models.py:1121
+msgid "No calendar"
+msgstr "لا يوجد تقويم"
+
+#: coderedcms/models/page_models.py:1122
+msgid "Month"
+msgstr "شهر"
+
+#: coderedcms/models/page_models.py:1123
+msgid "Week"
+msgstr "أسبوع"
+
+#: coderedcms/models/page_models.py:1124
+msgid "Day"
+msgstr "يوم"
+
+#: coderedcms/models/page_models.py:1125
+msgid "List of events"
+msgstr "قائمة الأحداث"
+
+#: coderedcms/models/page_models.py:1128
+msgid "Default"
+msgstr "افتراضي"
+
+#: coderedcms/models/page_models.py:1129
+msgid "Solid rectangles"
+msgstr "مستطيلات صلبة"
+
+#: coderedcms/models/page_models.py:1130
+msgid "Dots with labels"
+msgstr "النقاط ذات التسميات"
+
+#: coderedcms/models/page_models.py:1146 coderedcms/models/page_models.py:1164
+msgid "Calendar Style"
+msgstr "نمط التقويم"
+
+#: coderedcms/models/page_models.py:1147
+msgid "The default look of the calendar on this page."
+msgstr "المظهر الافتراضي للتقويم في هذه الصفحة."
+
+#: coderedcms/models/page_models.py:1154
+msgid "Event Style"
+msgstr "نمط الحدث"
+
+#: coderedcms/models/page_models.py:1155
+msgid "How events look on the calendar."
+msgstr "كيف تبدو الأحداث في التقويم."
+
+#: coderedcms/models/page_models.py:1253
+msgid "CodeRed Event Occurrence"
+msgstr "حدوث حدث CodeRed"
+
+#: coderedcms/models/page_models.py:1268
+msgid "Email form submissions to"
+msgstr "إرسال نماذج البريد الإلكتروني إلى"
+
+#: coderedcms/models/page_models.py:1270
+msgid ""
+"Optional - email form submissions to this address. Separate multiple "
+"addresses by comma."
+msgstr ""
+"اختياري - إرسال نموذج البريد الإلكتروني إلى هذا العنوان. افصل بين العناوين "
+"المتعددة بفاصلة."
+
+#: coderedcms/models/page_models.py:1277
+#| msgid "email address"
+msgid "Reply-to address"
+msgstr "عنوان الرد"
+
+#: coderedcms/models/page_models.py:1279
+msgid ""
+"Optional - to reply to the submitter, specify the email field here. For "
+"example, if a form field above is labeled \"Your Email\", enter: {{ "
+"your_email }}"
+msgstr ""
+"اختياري - للرد على المرسل ، حدد حقل البريد الإلكتروني هنا. على سبيل المثال، "
+"إذا كان حقل النموذج أعلاه يسمى \"بريدك الإلكتروني\"، فأدخل: {{ your_email }}"
+
+#: coderedcms/models/page_models.py:1287
+#: coderedcms/models/snippet_models.py:580
+msgid "Subject"
+msgstr "موضوع"
+
+#: coderedcms/models/page_models.py:1291
+#| msgid "Permissions"
+msgid "Save form submissions"
+msgstr "حفظ عمليات إرسال النماذج"
+
+#: coderedcms/models/page_models.py:1293
+msgid "Submissions are saved to database and can be exported at any time."
+msgstr "يتم حفظ عمليات الإرسال في قاعدة البيانات ويمكن تصديرها في أي وقت."
+
+#: coderedcms/models/page_models.py:1302 coderedcms/models/page_models.py:1616
+#| msgid "Thank You"
+msgid "Thank you page"
+msgstr "صفحة الشكر"
+
+#: coderedcms/models/page_models.py:1304
+msgid "The page users are redirected to after submitting the form."
+msgstr "تتم إعادة توجيه مستخدمي الصفحة بعد إرسال النموذج."
+
+#: coderedcms/models/page_models.py:1309
+msgid "Submit"
+msgstr "إرسال"
+
+#: coderedcms/models/page_models.py:1310
+msgid "Button text"
+msgstr "نص الزر"
+
+#: coderedcms/models/page_models.py:1317
+msgid "Button style"
+msgstr "نمط الزر"
+
+#: coderedcms/models/page_models.py:1329
+msgid "Button CSS class"
+msgstr "زر فئة CSS"
+
+#: coderedcms/models/page_models.py:1330
+msgid "Custom CSS class applied to the submit button."
+msgstr "يتم تطبيق فئة CSS المخصصة على زر الإرسال."
+
+#: coderedcms/models/page_models.py:1335
+msgid "Form CSS Class"
+msgstr "نموذج فئة CSS"
+
+#: coderedcms/models/page_models.py:1336
+msgid "Custom CSS class applied to <form> element."
+msgstr "فئة CSS مخصصة مطبقة على <form> العنصر."
+
+#: coderedcms/models/page_models.py:1341
+msgid "Form ID"
+msgstr "معرف النموذج"
+
+#: coderedcms/models/page_models.py:1342
+msgid "Custom ID applied to <form> element."
+msgstr "معرف مخصص مطبق على <form> عنصر."
+
+#: coderedcms/models/page_models.py:1347
+msgid "Form go live date/time"
+msgstr "تاريخ / وقت بدء تشغيل النموذج"
+
+#: coderedcms/models/page_models.py:1348
+msgid "Date and time when the FORM goes live on the page."
+msgstr "تاريخ ووقت نشر النموذج على الصفحة."
+
+#: coderedcms/models/page_models.py:1353
+msgid "Form expiry date/time"
+msgstr "تاريخ/وقت انتهاء صلاحية النموذج"
+
+#: coderedcms/models/page_models.py:1355
+msgid "Date and time when the FORM will no longer be available on the page."
+msgstr "التاريخ والوقت الذي لن يكون فيه النموذج متاحا على الصفحة."
+
+#: coderedcms/models/page_models.py:1360
+msgid "Spam Protection"
+msgstr "الحماية من البريد العشوائي"
+
+#: coderedcms/models/page_models.py:1362
+msgid ""
+"When enabled, the CMS will filter out spam form submissions for this page."
+msgstr ""
+"عند التمكين ، سيقوم نظام إدارة المحتوى بتصفية عمليات إرسال نماذج البريد "
+"العشوائي لهذه الصفحة."
+
+#: coderedcms/models/page_models.py:1377
+#| msgid "Settings"
+msgid "Form Settings"
+msgstr "إعدادات النموذج"
+
+#: coderedcms/models/page_models.py:1386
+#| msgid "Permissions"
+msgid "Form Submissions"
+msgstr "تقديم النماذج"
+
+#: coderedcms/models/page_models.py:1401
+msgid "Form Scheduled Publishing"
+msgstr "نموذج النشر المجدول"
+
+#: coderedcms/models/page_models.py:1615
+msgid "Form"
+msgstr "شكل"
+
+#: coderedcms/models/page_models.py:1668
+msgid ""
+"There was an error while processing your submission.  Please try again."
+msgstr "حدث خطأ أثناء معالجة إرسالك.  يرجى المحاولة مرة أخرى."
+
+#: coderedcms/models/page_models.py:1717
+#| msgid "Create a Page"
+msgid "CodeRed Form Page"
+msgstr "صفحة نموذج CodeRed"
+
+#: coderedcms/models/page_models.py:1736 coderedcms/models/page_models.py:1971
+msgid "Confirmation Emails"
+msgstr "رسائل التأكيد الإلكترونية"
+
+#: coderedcms/models/page_models.py:1765
+msgid "Submission date"
+msgstr "تاريخ التقديم"
+
+#: coderedcms/models/page_models.py:1801
+#: coderedcms/wagtail_flexible_forms/models.py:313
+msgid "Not submitted"
+msgstr "لم يتم الإرسال"
+
+#: coderedcms/models/page_models.py:1802
+msgid "Complete"
+msgstr "كامل"
+
+#: coderedcms/models/page_models.py:1803
+#: coderedcms/wagtail_flexible_forms/models.py:315
+msgid "Under consideration"
+msgstr "قيد النظر"
+
+#: coderedcms/models/page_models.py:1804
+#: coderedcms/wagtail_flexible_forms/models.py:316
+msgid "Approved"
+msgstr "مصدق"
+
+#: coderedcms/models/page_models.py:1805
+#: coderedcms/wagtail_flexible_forms/models.py:317
+msgid "Rejected"
+msgstr "نبيذ"
+
+#: coderedcms/models/page_models.py:1955
+msgid "CodeRed Advanced Form Page"
+msgstr "صفحة نموذج CodeRed المتقدم"
+
+#: coderedcms/models/page_models.py:2009
+msgid "CodeRed Location"
+msgstr "موقع كودريد"
+
+#: coderedcms/models/page_models.py:2024
+msgid "Latitude"
+msgstr "العرض"
+
+#: coderedcms/models/page_models.py:2027
+msgid "Longitude"
+msgstr "خط الطول"
+
+#: coderedcms/models/page_models.py:2031
+msgid "Auto Update Latitude and Longitude"
+msgstr "التحديث التلقائي لخطوط الطول والعرض"
+
+#: coderedcms/models/page_models.py:2033
+msgid ""
+"If checked, automatically update the latitude and longitude when the address"
+" is updated."
+msgstr ""
+"إذا تم تحديده ، فقم بتحديث خطوط الطول والعرض تلقائيا عند تحديث العنوان."
+
+#: coderedcms/models/page_models.py:2040
+#| msgid "No Title"
+msgid "Map Title"
+msgstr "عنوان الخريطة"
+
+#: coderedcms/models/page_models.py:2042
+msgid "If this is filled out, this is the title that will be used on the map."
+msgstr "إذا تم ملء هذا ، فهذا هو العنوان الذي سيتم استخدامه على الخريطة."
+
+#: coderedcms/models/page_models.py:2048
+#| msgid "No Description"
+msgid "Map Description"
+msgstr "وصف الخريطة"
+
+#: coderedcms/models/page_models.py:2050
+msgid ""
+"If this is filled out, this is the description that will be used on the map."
+msgstr "إذا تم ملء هذا ، فهذا هو الوصف الذي سيتم استخدامه على الخريطة."
+
+#: coderedcms/models/page_models.py:2053
+msgid "Website"
+msgstr "الموقع الإلكتروني"
+
+#: coderedcms/models/page_models.py:2055
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#: coderedcms/models/page_models.py:2070
+#| msgid "Map of"
+msgid "Map Layout"
+msgstr "تخطيط الخريطة"
+
+#: coderedcms/models/page_models.py:2081
+#| msgid "Settings"
+msgid "Location Settings"
+msgstr "إعدادات الموقع"
+
+#: coderedcms/models/page_models.py:2154
+msgid "CodeRed Location Index Page"
+msgstr "صفحة فهرس الموقع CodeRed"
+
+#: coderedcms/models/page_models.py:2164
+msgid "The default latitude you want the map set to."
+msgstr "خط العرض الافتراضي الذي تريد تعيين الخريطة إليه."
+
+#: coderedcms/models/page_models.py:2170
+msgid "The default longitude you want the map set to."
+msgstr "خط الطول الافتراضي الذي تريد تعيين الخريطة عليه."
+
+#: coderedcms/models/page_models.py:2192
+msgid "Map Display"
+msgstr "عرض الخريطة"
+
+#: coderedcms/models/snippet_models.py:53
+msgid "Show controls"
+msgstr "إظهار عناصر التحكم"
+
+#: coderedcms/models/snippet_models.py:55
+msgid ""
+"Shows arrows on the left and right of the carousel to advance next or "
+"previous slides."
+msgstr ""
+"إظهار الأسهم على يسار ويمين المكتبة للتقدم بالشرائح التالية أو السابقة."
+
+#: coderedcms/models/snippet_models.py:61
+msgid "Show indicators"
+msgstr "عرض المؤشرات"
+
+#: coderedcms/models/snippet_models.py:63
+msgid ""
+"Shows small indicators at the bottom of the carousel based on the number of "
+"slides."
+msgstr "يعرض مؤشرات صغيرة في الجزء السفلي من المكتبة بناء على عدد الشرائح."
+
+#: coderedcms/models/snippet_models.py:70
+msgid "Slider"
+msgstr "شريط التمرير"
+
+#: coderedcms/models/snippet_models.py:77
+msgid "Slides"
+msgstr "الشرائح"
+
+#: coderedcms/models/snippet_models.py:91
+msgid "Carousel Slide"
+msgstr "شريحة دائرية"
+
+#: coderedcms/models/snippet_models.py:115
+#: coderedcms/models/snippet_models.py:281
+#: coderedcms/models/snippet_models.py:473
+msgid "Custom CSS class"
+msgstr "فئة CSS مخصصة"
+
+#: coderedcms/models/snippet_models.py:145
+#: coderedcms/models/snippet_models.py:195
+#| msgid "Add Classifier"
+msgid "Classifier"
+msgstr "المصنف"
+
+#: coderedcms/models/snippet_models.py:152
+#: coderedcms/models/snippet_models.py:200
+msgid "Slug"
+msgstr "سبيكه"
+
+#: coderedcms/models/snippet_models.py:162
+#: coderedcms/models/snippet_models.py:190
+#| msgid "Add Classifier"
+msgid "Classifier Terms"
+msgstr "شروط المصنف"
+
+#: coderedcms/models/snippet_models.py:189
+#| msgid "Add Classifier"
+msgid "Classifier Term"
+msgstr "مصطلح المصنف"
+
+#: coderedcms/models/snippet_models.py:242
+#: coderedcms/models/snippet_models.py:443
+msgid "Panels"
+msgstr "لوحات"
+
+#: coderedcms/models/snippet_models.py:251
+#: coderedcms/models/snippet_models.py:256
+msgid "Film Panel"
+msgstr "لوحة الفيلم"
+
+#: coderedcms/models/snippet_models.py:264
+msgid "Background image"
+msgstr "صورة الخلفية"
+
+#: coderedcms/models/snippet_models.py:311
+msgid "Navigation Bar"
+msgstr "شريط التنقل"
+
+#: coderedcms/models/snippet_models.py:329
+msgid "Navigation links"
+msgstr "روابط التنقل"
+
+#: coderedcms/models/snippet_models.py:341
+#: coderedcms/models/snippet_models.py:387
+msgid "Attributes"
+msgstr "سمات"
+
+#: coderedcms/models/snippet_models.py:357
+msgid "Footer"
+msgstr "تذييل الصفحه"
+
+#: coderedcms/models/snippet_models.py:412
+#| msgid "Replace content"
+msgid "content"
+msgstr "محتوى"
+
+#: coderedcms/models/snippet_models.py:428
+#: coderedcms/models/snippet_models.py:438
+#: coderedcms/models/snippet_models.py:456
+msgid "Accordion"
+msgstr "الاكورديون"
+
+#: coderedcms/models/snippet_models.py:429
+msgid "Accordions"
+msgstr "الاكورديون"
+
+#: coderedcms/models/snippet_models.py:510
+msgid "Dismissible"
+msgstr "مرفوض"
+
+#: coderedcms/models/snippet_models.py:514
+msgid "Show once"
+msgstr "عرض مرة واحدة"
+
+#: coderedcms/models/snippet_models.py:516
+msgid ""
+"Do not show the content wall to the same user again after it has been "
+"closed."
+msgstr "لا تعرض حائط المحتوى لنفس المستخدم مرة أخرى بعد إغلاقه."
+
+#: coderedcms/models/snippet_models.py:544
+msgid "CodeRed Email"
+msgstr "البريد الإلكتروني CodeRed"
+
+#: coderedcms/models/snippet_models.py:549
+msgid "To Addresses"
+msgstr "إلى العناوين"
+
+#: coderedcms/models/snippet_models.py:550
+#: coderedcms/models/snippet_models.py:565
+#: coderedcms/models/snippet_models.py:571
+#: coderedcms/models/snippet_models.py:577
+msgid "Separate multiple email addresses with commas."
+msgstr "افصل بين عناوين البريد الإلكتروني المتعددة بفواصل."
+
+#: coderedcms/models/snippet_models.py:555
+#| msgid "email address"
+msgid "From Address"
+msgstr "من العنوان"
+
+#: coderedcms/models/snippet_models.py:557
+msgid ""
+"For example: \"sender@example.com\" or \"Sender Name <sender@example.com>\" "
+"(without quotes)."
+msgstr ""
+"على سبيل المثال: \"sender@example.com\" أو \"اسم المرسل "
+"<sender@example.com>\" (بدون علامات اقتباس)."
+
+#: coderedcms/models/snippet_models.py:564
+#| msgid "email address"
+msgid "Reply-To Address"
+msgstr "الرد على العنوان"
+
+#: coderedcms/models/snippet_models.py:570
+msgid "CC"
+msgstr "سي سي"
+
+#: coderedcms/models/snippet_models.py:576
+msgid "BCC"
+msgstr "مخفيه"
+
+#: coderedcms/models/snippet_models.py:594
+#| msgid "email address"
+msgid "Email Message"
+msgstr "رسالة بريد إلكتروني"
+
+#: coderedcms/models/wagtailsettings_models.py:45
+#| msgid "Settings"
+msgid "CRX Settings"
+msgstr "إعدادات CRX"
+
+#: coderedcms/models/wagtailsettings_models.py:53
+msgid "Logo"
+msgstr "شعار"
+
+#: coderedcms/models/wagtailsettings_models.py:54
+msgid "Brand logo used in the navbar and throughout the site"
+msgstr "شعار العلامة التجارية المستخدمة في شريط التنقل وفي جميع أنحاء الموقع"
+
+#: coderedcms/models/wagtailsettings_models.py:62
+msgid "Favicon"
+msgstr "فافيكون"
+
+#: coderedcms/models/wagtailsettings_models.py:69
+msgid "Navbar color scheme"
+msgstr "نظام ألوان شريط التنقل"
+
+#: coderedcms/models/wagtailsettings_models.py:71
+msgid ""
+"Optimizes text and other navbar elements for use with light or dark "
+"backgrounds."
+msgstr ""
+"يحسن النص وعناصر شريط التنقل الأخرى للاستخدام مع الخلفيات الفاتحة أو "
+"الداكنة."
+
+#: coderedcms/models/wagtailsettings_models.py:79
+msgid "Navbar CSS class"
+msgstr "فئة CSS Navbar"
+
+#: coderedcms/models/wagtailsettings_models.py:81
+msgid "Custom classes applied to navbar e.g. \"bg-light\", \"bg-dark\", \"bg-primary\"."
+msgstr ""
+"الفئات المخصصة المطبقة على شريط التنقل مثل \"bg-light\" و \"bg-dark\" و "
+"\"bg-primary\"."
+
+#: coderedcms/models/wagtailsettings_models.py:86
+msgid "Fixed navbar"
+msgstr "شريط التنقل الثابت"
+
+#: coderedcms/models/wagtailsettings_models.py:88
+msgid "Fixed navbar will remain at the top of the page when scrolling."
+msgstr "سيبقى شريط التنقل الثابت في أعلى الصفحة عند التمرير."
+
+#: coderedcms/models/wagtailsettings_models.py:93
+msgid "Full width navbar contents"
+msgstr "محتويات شريط التنقل بالعرض الكامل"
+
+#: coderedcms/models/wagtailsettings_models.py:94
+msgid "Content within the navbar will fill edge to edge."
+msgstr "سيتم ملء المحتوى داخل شريط التنقل من الحافة إلى الحافة."
+
+#: coderedcms/models/wagtailsettings_models.py:101
+msgid "Collapse navbar menu"
+msgstr "طي قائمة شريط التنقل"
+
+#: coderedcms/models/wagtailsettings_models.py:103
+msgid ""
+"Control on what screen sizes to show and collapse the navbar menu links."
+msgstr "التحكم في أحجام الشاشة المراد إظهارها وطي ارتباطات قائمة شريط التنقل."
+
+#: coderedcms/models/wagtailsettings_models.py:111
+msgid "Navbar format"
+msgstr "تنسيق شريط التنقل"
+
+#: coderedcms/models/wagtailsettings_models.py:115
+#| msgid "Search for"
+msgid "Search box"
+msgstr "مربع البحث"
+
+#: coderedcms/models/wagtailsettings_models.py:116
+msgid "Show search box in navbar"
+msgstr "إظهار مربع البحث في شريط التنقل"
+
+#: coderedcms/models/wagtailsettings_models.py:121
+#| msgid "email address"
+msgid "From email address"
+msgstr "من عنوان البريد الإلكتروني"
+
+#: coderedcms/models/wagtailsettings_models.py:123
+msgid ""
+"The default email address this site appears to send from. For example: "
+"\"sender@example.com\" or \"Sender Name <sender@example.com>\" (without "
+"quotes)"
+msgstr ""
+"عنوان البريد الإلكتروني الافتراضي الذي يبدو أن هذا الموقع يرسل منه. على سبيل"
+" المثال: \"sender@example.com\" أو \"اسم المرسل <sender@example.com>\" (بدون"
+" علامات اقتباس)"
+
+#: coderedcms/models/wagtailsettings_models.py:130
+msgid "Number of results per page"
+msgstr "عدد النتائج لكل صفحة"
+
+#: coderedcms/models/wagtailsettings_models.py:133
+msgid "Open all external links in new tab"
+msgstr "فتح جميع الروابط الخارجية في علامة تبويب جديدة"
+
+#: coderedcms/models/wagtailsettings_models.py:138
+msgid "Google Maps API Key"
+msgstr "مفتاح واجهة برمجة تطبيقات خرائط Google"
+
+#: coderedcms/models/wagtailsettings_models.py:139
+msgid "The API Key used for Google Maps."
+msgstr "مفتاح واجهة برمجة التطبيقات المستخدم لخرائط Google."
+
+#: coderedcms/models/wagtailsettings_models.py:144
+msgid "Mailchimp API Key"
+msgstr "مفتاح واجهة برمجة تطبيقات Mailchimp"
+
+#: coderedcms/models/wagtailsettings_models.py:145
+msgid "The API Key used for Mailchimp."
+msgstr "مفتاح API المستخدم ل Mailchimp."
+
+#: coderedcms/models/wagtailsettings_models.py:159
+msgid "Site Navbar Layout"
+msgstr "تخطيط شريط التنقل في الموقع"
+
+#: coderedcms/models/wagtailsettings_models.py:163
+msgid "Choose one or more navbars for your site."
+msgstr "اختر شريط تنقل واحدا أو أكثر لموقعك."
+
+#: coderedcms/models/wagtailsettings_models.py:164
+#: coderedcms/models/wagtailsettings_models.py:237
+msgid "Site Navbars"
+msgstr "أشرطة التنقل في الموقع"
+
+#: coderedcms/models/wagtailsettings_models.py:171
+msgid "Choose one or more footers for your site."
+msgstr "اختر تذييلا واحدا أو أكثر لموقعك."
+
+#: coderedcms/models/wagtailsettings_models.py:172
+#: coderedcms/models/wagtailsettings_models.py:253
+msgid "Site Footers"
+msgstr "تذييلات الموقع"
+
+#: coderedcms/models/wagtailsettings_models.py:182
+msgid "Branding"
+msgstr "العلامات التجاريه"
+
+#: coderedcms/models/wagtailsettings_models.py:190
+msgid "General"
+msgstr "عام"
+
+#: coderedcms/models/wagtailsettings_models.py:197
+msgid "API Keys"
+msgstr "مفاتيح واجهة برمجة التطبيقات"
+
+#: coderedcms/models/wagtailsettings_models.py:272
+msgid "Tracking"
+msgstr "تتبع"
+
+#: coderedcms/models/wagtailsettings_models.py:277
+msgid "G Tracking ID"
+msgstr "معرف تتبع G"
+
+#: coderedcms/models/wagtailsettings_models.py:278
+msgid "Your Google Analytics 4 tracking ID (begins with \"G-\")"
+msgstr "معرف التتبع في \"إحصاءات Google\" 4 (يبدأ ب \"G\")"
+
+#: coderedcms/models/wagtailsettings_models.py:282
+msgid "Track button clicks"
+msgstr "تعقب نقرات الزر"
+
+#: coderedcms/models/wagtailsettings_models.py:284
+msgid ""
+"Track all button clicks using Google Analytics event tracking. Event "
+"tracking details can be specified in each button’s advanced settings "
+"options."
+msgstr ""
+"تتبع جميع النقرات على الأزرار باستخدام تتبع الأحداث في Google Analytics. "
+"يمكن تحديد تفاصيل تتبع الأحداث في خيارات الإعدادات المتقدمة لكل زر."
+
+#: coderedcms/models/wagtailsettings_models.py:292
+msgid "Google Tag Manager ID"
+msgstr "معرف \"مدير العلامات من Google\""
+
+#: coderedcms/models/wagtailsettings_models.py:293
+msgid "Begins with \"GTM-\""
+msgstr "يبدأ ب \"GTM-\""
+
+#: coderedcms/models/wagtailsettings_models.py:298
+msgid "<head> tracking scripts"
+msgstr "<head> تتبع البرامج النصية"
+
+#: coderedcms/models/wagtailsettings_models.py:299
+msgid "Add tracking scripts between the <head> tags."
+msgstr "أضف نصوص التتبع بين <head> العلامات."
+
+#: coderedcms/models/wagtailsettings_models.py:304
+msgid "<body> tracking scripts"
+msgstr "<body> تتبع البرامج النصية"
+
+#: coderedcms/models/wagtailsettings_models.py:305
+msgid "Add tracking scripts toward closing <body> tag."
+msgstr "أضف نصوص التتبع نحو علامة الإغلاق <body> ."
+
+#: coderedcms/models/wagtailsettings_models.py:310
+msgid "Know your tracking"
+msgstr "تعرف على التتبع الخاص بك"
+
+#: coderedcms/models/wagtailsettings_models.py:312
+msgid ""
+"<h2>Which tracking IDs do I need?</h2><p>Before adding tracking to your "
+"site, <a href=\"https://docs.coderedcorp.com/wagtail-"
+"crx/how_to/add_tracking_scripts.html\" target=\"_blank\">read about the "
+"difference between G, UA, GTM, and other tracking IDs</a>.</p>"
+msgstr ""
+"<h2>ما هي معرفات التتبع التي أحتاجها؟</h2><p>قبل إضافة التتبع إلى موقعك، <a "
+"href=\"https://docs.coderedcorp.com/wagtail-"
+"crx/how_to/add_tracking_scripts.html\" target=\"_blank\">اقرأ عن الفرق بين G"
+" وUA وGTM ومعرفات التتبع الأخرى</a>.</p>"
+
+#: coderedcms/models/wagtailsettings_models.py:324
+msgid "Google Analytics"
+msgstr "تحليلات جوجل"
+
+#: coderedcms/models/wagtailsettings_models.py:330
+msgid "Google Tag Manager"
+msgstr "مدير العلامات من Google"
+
+#: coderedcms/models/wagtailsettings_models.py:337
+msgid "Other Tracking Scripts"
+msgstr "نصوص التتبع الأخرى"
+
+#: coderedcms/project_template/pro/custom_user/admin.py:21
 #: custom_user/admin.py:21
 msgid "Personal info"
 msgstr "المعلومات الشخصية"
 
+#: coderedcms/project_template/pro/custom_user/admin.py:30
 #: custom_user/admin.py:30
 msgid "Permissions"
 msgstr "اذونات"
 
+#: coderedcms/project_template/pro/custom_user/admin.py:41
 #: custom_user/admin.py:41
 msgid "Important dates"
 msgstr "تواريخ مهمة"
 
+#: coderedcms/project_template/pro/custom_user/models.py:50
 #: custom_user/models.py:50
 msgid "email address"
 msgstr "عنوان البريد الإلكتروني"
 
+#: coderedcms/project_template/pro/custom_user/models.py:53
 #: custom_user/models.py:53
 msgid "A user with that username already exists."
 msgstr "مستخدم باسم المستخدم هذا موجود بالفعل."
 
-#: scrapper/templates/admin/fetch_bing_news.html:11
-#: website/templates/admin/fetch_bing_news.html:11
-msgid "Advanced Bing News Search"
-msgstr "البحث المتقدم في أخبار Bing"
+#: coderedcms/templates/coderedcms/blocks/film_strip_block.html:28
+#: coderedcms/templates/coderedcms/includes/pagination.html:8
+#: website/templates/coderedcms/blocks/film_strip_block.html:28
+#: website/templates/coderedcms/includes/pagination.html:8
+msgid "Previous"
+msgstr "سابق"
 
-#: scrapper/templates/admin/fetch_bing_news.html:19
-#: scrapper/templates/admin/fetch_news.html:57
-#: website/templates/admin/fetch_bing_news.html:19
-#: website/templates/admin/fetch_news.html:57
-msgid "Search Query:"
-msgstr "ادخل الكلمات المفتاحية:"
+#: coderedcms/templates/coderedcms/blocks/film_strip_block.html:31
+#: coderedcms/templates/coderedcms/includes/pagination.html:16
+#: website/templates/coderedcms/blocks/film_strip_block.html:31
+#: website/templates/coderedcms/includes/pagination.html:16
+msgid "Next"
+msgstr "مقبل"
 
-#: scrapper/templates/admin/fetch_bing_news.html:20
-#: scrapper/templates/admin/fetch_news.html:58
-#: website/templates/admin/fetch_bing_news.html:20
-#: website/templates/admin/fetch_news.html:58
-msgid "Enter keywords..."
-msgstr "يمكنك ادخال مفردات او جمل مثلا : فلسطين ، دونالد ترامب .."
+#: coderedcms/templates/coderedcms/includes/classifier_dropdowns.html:5
+#: website/templates/coderedcms/includes/classifier_dropdowns.html:5
+msgid "Filter by"
+msgstr "تصفية حسب"
 
-#: scrapper/templates/admin/fetch_bing_news.html:26
-#: website/templates/admin/fetch_bing_news.html:26
-msgid "Country Code:"
-msgstr "في اي بلد ؟"
+#: coderedcms/templates/coderedcms/includes/classifier_dropdowns.html:11
+#: website/templates/coderedcms/includes/classifier_dropdowns.html:11
+msgid "Filter"
+msgstr "راووق"
 
-#: scrapper/templates/admin/fetch_bing_news.html:28
-#: scrapper/templates/admin/fetch_bing_news.html:38
-#: scrapper/templates/admin/fetch_bing_news.html:53
-#: scrapper/templates/admin/fetch_news.html:68
-#: website/templates/admin/fetch_bing_news.html:28
-#: website/templates/admin/fetch_bing_news.html:38
-#: website/templates/admin/fetch_bing_news.html:53
-#: website/templates/admin/fetch_news.html:68
-msgid "Any"
-msgstr "الكل "
+#: coderedcms/templates/coderedcms/includes/classifier_dropdowns.html:12
+#: coderedcms/templates/coderedcms/includes/classifier_nav.html:6
+#: website/templates/coderedcms/includes/classifier_dropdowns.html:12
+#: website/templates/coderedcms/includes/classifier_nav.html:6
+msgid "All"
+msgstr "كل"
 
-#: scrapper/templates/admin/fetch_bing_news.html:29
-#: website/templates/admin/fetch_bing_news.html:29
-msgid "United States"
-msgstr "الولايات المتحدة الأمريكية"
+#: coderedcms/templates/coderedcms/includes/form_honeypot.html:3
+#: website/templates/coderedcms/includes/form_honeypot.html:3
+msgid "Leave this blank if you are a human"
+msgstr "اترك هذا فارغا إذا كنت إنسانا"
 
-#: scrapper/templates/admin/fetch_bing_news.html:30
-#: website/templates/admin/fetch_bing_news.html:30
-msgid "United Kingdom"
-msgstr "المملكة المتحدة"
+#: coderedcms/templates/coderedcms/includes/iframe_gmap.html:5
+#: website/templates/coderedcms/includes/iframe_gmap.html:5
+msgid "Map of"
+msgstr "خريطة"
 
-#: scrapper/templates/admin/fetch_bing_news.html:31
-#: website/templates/admin/fetch_bing_news.html:31
-msgid "France"
-msgstr "فرنسا"
+#: coderedcms/templates/coderedcms/includes/pagination.html:12
+#: website/templates/coderedcms/includes/pagination.html:12
+msgid "of"
+msgstr "من"
 
-#: scrapper/templates/admin/fetch_bing_news.html:32
-#: website/templates/admin/fetch_bing_news.html:32
-msgid "Germany"
-msgstr "ألمانيا"
+#: coderedcms/templates/coderedcms/pages/base.html:149
+#: website/templates/coderedcms/pages/base.html:153
+msgid "Related"
+msgstr "ذات الصله"
 
-#: scrapper/templates/admin/fetch_bing_news.html:36
-#: website/templates/admin/fetch_bing_news.html:36
-msgid "Category:"
-msgstr "الصنف :"
+#: coderedcms/templates/coderedcms/pages/form_page_landing.html:5
+#: website/templates/coderedcms/pages/form_page_landing.html:5
+msgid "Thank You"
+msgstr "شكرا"
 
-#: scrapper/templates/admin/fetch_bing_news.html:39
-#: website/templates/admin/fetch_bing_news.html:39
+#: coderedcms/templates/coderedcms/pages/form_page_landing.html:6
+#: website/templates/coderedcms/pages/form_page_landing.html:6
+msgid "We have successfully received your submission."
+msgstr "لقد تلقينا طلبك بنجاح."
+
+#: coderedcms/templates/coderedcms/pages/search.html:7
+#: coderedcms/templates/coderedcms/pages/search.html:16
+#: website/templates/coderedcms/pages/search.html:7
+#: website/templates/coderedcms/pages/search.html:16
+msgid "Search for"
+msgstr "بحث"
+
+#: coderedcms/templates/coderedcms/pages/search.html:45
+#: website/templates/coderedcms/pages/search.html:45
+msgid "All Results"
+msgstr "جميع النتائج"
+
+#: coderedcms/templates/coderedcms/pages/search.html:80
+#: website/templates/coderedcms/pages/search.html:80
+msgid "No results found."
+msgstr "لم يتم العثور على نتائج."
+
+#: coderedcms/templates/coderedcms/widgets/checkbox_classifiers.html:31
+#: website/templates/coderedcms/widgets/checkbox_classifiers.html:31
+msgid "Organize Pages with Classifiers"
+msgstr "تنظيم الصفحات باستخدام المصنفات"
+
+#: coderedcms/templates/coderedcms/widgets/checkbox_classifiers.html:33
+#: website/templates/coderedcms/widgets/checkbox_classifiers.html:33
+msgid "Use Classifiers to create custom categories and filters."
+msgstr "استخدم المصنفات لإنشاء فئات وفلاتر مخصصة."
+
+#: coderedcms/templates/coderedcms/widgets/checkbox_classifiers.html:37
+#: website/templates/coderedcms/widgets/checkbox_classifiers.html:37
+msgid "Add Classifier"
+msgstr "إضافة مصنف"
+
+#: coderedcms/templates/wagtailadmin/login.html:5
+msgid "Sign in to"
+msgstr "تسجيل الدخول إلى"
+
+#: coderedcms/templates/wagtailcore/password_required.html:8
+msgid "Password Required"
+msgstr "كلمة المرور مطلوبة"
+
+#: coderedcms/templates/wagtailcore/password_required.html:10
+msgid "You need a password to access this page."
+msgstr "تحتاج إلى كلمة مرور للوصول إلى هذه الصفحة."
+
+#: coderedcms/templates/wagtailcore/password_required.html:15
+msgid "Continue"
+msgstr "استمر"
+
+#: coderedcms/templates/wagtailforms/list_submissions.html:11
+msgid "Delete selected submissions"
+msgstr "حذف المساهمات المحددة"
+
+#: coderedcms/templates/wagtailimportexport/import_from_csv.html:3
+#: coderedcms/templates/wagtailimportexport/import_from_csv.html:13
+#: coderedcms/templates/wagtailimportexport/index.html:5
+#| msgid "Important dates"
+msgid "Import pages"
+msgstr "استيراد الصفحات"
+
+#: coderedcms/templates/wagtailimportexport/import_from_csv.html:27
+msgid "IMPORTANT:"
+msgstr "مهم:"
+
+#: coderedcms/templates/wagtailimportexport/import_from_csv.html:28
+msgid "CSV file must be in the correct format before importing."
+msgstr "يجب أن يكون ملف CSV بالتنسيق الصحيح قبل الاستيراد."
+
+#: coderedcms/templates/wagtailimportexport/import_from_csv.html:30
+msgid "Read the importing guide."
+msgstr "اقرأ دليل الاستيراد."
+
+#: coderedcms/templates/wagtailimportexport/import_from_csv.html:35
+#: coderedcms/wagtail_hooks.py:131
+#| msgid "Sports"
+msgid "Import"
+msgstr "استورد"
+
+#: coderedcms/templates/wagtailimportexport/index.html:3
+#| msgid "Important dates"
+msgid "Import / export pages"
+msgstr "استيراد / تصدير الصفحات"
+
+#: coderedcms/templates/wagtailimportexport/index.html:10
+msgid "Import from CSV file"
+msgstr "الاستيراد من ملف CSV"
+
+
+
+#: coderedcms/views.py:338
+#, python-format
+msgid "%(count)s page imported."
+msgid_plural "%(count)s pages imported."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:21
+msgid "Label"
+msgstr "تسميه"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:22
+msgid "Help text"
+msgstr "نص التعليمات"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:56
+msgid "Required"
+msgstr "مطلوب"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:68
+msgid "Phone"
+msgstr "الهاتف"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:73
+msgid "Format"
+msgstr "تنسيق"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:75
+#: coderedcms/wagtail_flexible_forms/blocks.py:92
+#: coderedcms/wagtail_flexible_forms/blocks.py:101
+msgid "Default value"
+msgstr "القيمة الافتراضية"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:78
+msgid "Text field (single line)"
+msgstr "حقل النص (سطر واحد)"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:97
+msgid "Text field (multi line)"
+msgstr "حقل نص (متعدد الأسطر)"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:106
+#| msgid "Number of Articles:"
+msgid "Number field"
+msgstr "حقل \"الرقم\""
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:115
+msgid "Checkbox field"
+msgstr "حقل خانة الاختيار"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:141
+msgid "Dropdown field"
+msgstr "حقل القائمة المنسدلة"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:151
+msgid "Checkbox"
+msgstr "خانة الاختيار"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:157
+msgid "Multiple checkboxes field"
+msgstr "حقل مربعات اختيار متعددة"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:192
+msgid "Date field"
+msgstr "حقل التاريخ"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:207
+msgid "Time field"
+msgstr "حقل الوقت"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:234
+msgid "Date+time field"
+msgstr "حقل التاريخ+الوقت"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:242
+msgid "Image field"
+msgstr "حقل الصورة"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:250
+msgid "File field"
+msgstr "حقل الملف"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:270
+msgid "Form fields"
+msgstr "حقول النموذج"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:278
+msgid "Form step"
+msgstr "خطوة النموذج"
+
+#: coderedcms/wagtail_flexible_forms/blocks.py:285
+msgid "Form steps"
+msgstr "خطوات النموذج"
+
+#: coderedcms/wagtail_flexible_forms/edit_handlers.py:13
+#| msgid "Permissions"
+msgid "{} submissions"
+msgstr "{} التقديمات"
+
+
+
+#: coderedcms/wagtail_flexible_forms/models.py:314
+msgid "In progress"
+msgstr "قيد التنفيذ"
+
+#: coderedcms/wagtail_flexible_forms/models.py:322
+#| msgid "Permissions"
+msgid "form submission"
+msgstr "تقديم النموذج"
+
+#: coderedcms/wagtail_flexible_forms/models.py:323
+#| msgid "Permissions"
+msgid "form submissions"
+msgstr "تقديم النماذج"
+
+#: coderedcms/wagtail_flexible_forms/models.py:566
+#| msgid "Related"
+msgid "Created"
+msgstr "انشاء"
+
+#: coderedcms/wagtail_flexible_forms/models.py:567
+msgid "Changed"
+msgstr "تغيير"
+
+#: coderedcms/wagtail_flexible_forms/models.py:568
+msgid "Deleted"
+msgstr "محذوف"
+
+
+
+
+#: coderedcms/wagtail_flexible_forms/models.py:651
+msgid "Submission created."
+msgstr "تم إنشاء التقديم."
+
+#: coderedcms/wagtail_flexible_forms/models.py:653
+msgid "Submission deleted."
+msgstr "تم حذف الإرسال."
+
+#: coderedcms/wagtail_flexible_forms/models.py:811
+msgid "Status"
+msgstr "حالة"
+
+#: coderedcms/wagtail_flexible_forms/models.py:812
+msgid "User"
+msgstr "مستخدم"
+
+#: coderedcms/wagtail_flexible_forms/models.py:813
+msgid "First modification"
+msgstr "التعديل الأول"
+
+#: coderedcms/wagtail_flexible_forms/models.py:814
+msgid "Last modification"
+msgstr "التعديل الأخير"
+
+#: scrapper/wagtail_hooks.py:23
 msgid "Business"
-msgstr "اعمال و اقتصاد"
+msgstr "مهنة"
 
-#: scrapper/templates/admin/fetch_bing_news.html:40
-#: website/templates/admin/fetch_bing_news.html:40
+#: scrapper/wagtail_hooks.py:23
 msgid "Entertainment"
 msgstr "ترفيه"
 
-#: scrapper/templates/admin/fetch_bing_news.html:41
-#: website/templates/admin/fetch_bing_news.html:41
+#: scrapper/wagtail_hooks.py:23
+msgid "Health"
+msgstr "الصحة"
+
+#: scrapper/wagtail_hooks.py:23
 msgid "Politics"
 msgstr "سياسة"
 
-#: scrapper/templates/admin/fetch_bing_news.html:42
-#: website/templates/admin/fetch_bing_news.html:42
+#: scrapper/wagtail_hooks.py:23
+msgid "Products"
+msgstr "منتجات"
+
+#: scrapper/wagtail_hooks.py:24
+#| msgid "Technology"
+msgid "ScienceAndTechnology"
+msgstr "العلوم والتكنولوجيا"
+
+#: scrapper/wagtail_hooks.py:24
 msgid "Sports"
-msgstr "رياضة"
+msgstr "رياضي"
 
-#: scrapper/templates/admin/fetch_bing_news.html:43
-#: website/templates/admin/fetch_bing_news.html:43
-msgid "Technology"
-msgstr "تكنولوجيا"
+#: scrapper/wagtail_hooks.py:24
+#| msgid "Sports"
+msgid "Sports_Soccer"
+msgstr "Sports_Soccer"
 
-#: scrapper/templates/admin/fetch_bing_news.html:51
-#: website/templates/admin/fetch_bing_news.html:51
-msgid "Freshness:"
-msgstr "الشريط الزمني :"
+#: scrapper/wagtail_hooks.py:24
+#| msgid "Sports"
+msgid "Sports_Tennis"
+msgstr "Sports_Tennis"
 
-#: scrapper/templates/admin/fetch_bing_news.html:54
-#: website/templates/admin/fetch_bing_news.html:54
-msgid "Last 24 hours"
-msgstr "آخر 24 ساعة"
+#: scrapper/wagtail_hooks.py:25
+msgid "US"
+msgstr "لنا"
 
-#: scrapper/templates/admin/fetch_bing_news.html:55
-#: website/templates/admin/fetch_bing_news.html:55
-msgid "Last 7 days"
-msgstr "آخر 7 أيام"
+#: scrapper/wagtail_hooks.py:25
+msgid "World"
+msgstr "عالم"
 
-#: scrapper/templates/admin/fetch_bing_news.html:56
-#: website/templates/admin/fetch_bing_news.html:56
-msgid "Last 30 days"
-msgstr "آخر 30 يوم"
+#: scrapper/wagtail_hooks.py:25
+msgid "World_Africa"
+msgstr "World_Africa"
 
-#: scrapper/templates/admin/fetch_bing_news.html:60
-#: website/templates/admin/fetch_bing_news.html:60
-msgid "Safe Search:"
-msgstr "البحث الآمن:"
+#: scrapper/wagtail_hooks.py:25
+msgid "World_Americas"
+msgstr "World_Americas"
 
-#: scrapper/templates/admin/fetch_bing_news.html:62
-#: website/templates/admin/fetch_bing_news.html:62
-msgid "Off"
-msgstr "ايقاف"
+#: scrapper/wagtail_hooks.py:25
+msgid "World_Asia"
+msgstr "World_Asia"
 
-#: scrapper/templates/admin/fetch_bing_news.html:63
-#: website/templates/admin/fetch_bing_news.html:63
-msgid "Moderate"
-msgstr "متوسط"
+#: scrapper/wagtail_hooks.py:26
+msgid "World_Europe"
+msgstr "World_Europe"
 
-#: scrapper/templates/admin/fetch_bing_news.html:64
-#: website/templates/admin/fetch_bing_news.html:64
-msgid "Strict"
-msgstr "صارم"
+#: scrapper/wagtail_hooks.py:26
+msgid "World_MiddleEast"
+msgstr "World_MiddleEast"
 
-#: scrapper/templates/admin/fetch_bing_news.html:72
-#: website/templates/admin/fetch_bing_news.html:72
-msgid "Market:"
-msgstr "المنطقة "
-
-#: scrapper/templates/admin/fetch_bing_news.html:73
-#: website/templates/admin/fetch_bing_news.html:73
-msgid "US Flag"
-msgstr "علم الولايات المتحدة"
-
-#: scrapper/templates/admin/fetch_bing_news.html:75
-#: website/templates/admin/fetch_bing_news.html:75
-msgid "English (US)"
-msgstr "امريكا الشمالية"
-
-#: scrapper/templates/admin/fetch_bing_news.html:76
-#: website/templates/admin/fetch_bing_news.html:76
-msgid "French (FR)"
-msgstr "غرب اوروبا "
-
-#: scrapper/templates/admin/fetch_bing_news.html:77
-#: website/templates/admin/fetch_bing_news.html:77
-msgid "Arabic (SA)"
-msgstr "الشرق الاوسط"
-
-#: scrapper/templates/admin/fetch_bing_news.html:78
-#: website/templates/admin/fetch_bing_news.html:78
-msgid "German (DE)"
-msgstr "وسط اوروبا"
-
-#: scrapper/templates/admin/fetch_bing_news.html:79
-#: website/templates/admin/fetch_bing_news.html:79
-msgid "Turkish (TR)"
-msgstr "الاناضول"
-
-#: scrapper/templates/admin/fetch_bing_news.html:84
-#: scrapper/templates/admin/fetch_news.html:63
-#: website/templates/admin/fetch_bing_news.html:84
-#: website/templates/admin/fetch_news.html:63
-msgid "Language:"
-msgstr "اللغة:"
-
-#: scrapper/templates/admin/fetch_bing_news.html:85
-#: website/templates/admin/fetch_bing_news.html:85
-msgid "English Flag"
-msgstr "العلم الإنجليزي"
-
-#: scrapper/templates/admin/fetch_bing_news.html:87
-#: scrapper/templates/admin/fetch_news.html:65
-#: website/templates/admin/fetch_bing_news.html:87
-#: website/templates/admin/fetch_news.html:65
-msgid "English"
-msgstr "الإنكليزية"
-
-#: scrapper/templates/admin/fetch_bing_news.html:88
-#: scrapper/templates/admin/fetch_news.html:67
-#: website/templates/admin/fetch_bing_news.html:88
-#: website/templates/admin/fetch_news.html:67
-msgid "French"
-msgstr "الفرنسية"
-
-#: scrapper/templates/admin/fetch_bing_news.html:89
-#: website/templates/admin/fetch_bing_news.html:89
-msgid "Arabic"
-msgstr "العربية"
-
-#: scrapper/templates/admin/fetch_bing_news.html:90
-#: website/templates/admin/fetch_bing_news.html:90
-msgid "German"
-msgstr "الألمانية"
-
-#: scrapper/templates/admin/fetch_bing_news.html:91
-#: website/templates/admin/fetch_bing_news.html:91
-msgid "Turkish"
-msgstr "التركية"
-
-#: scrapper/templates/admin/fetch_bing_news.html:99
-#: website/templates/admin/fetch_bing_news.html:99
-msgid "Number of Articles:"
-msgstr "عدد المقالات:"
-
-#: scrapper/templates/admin/fetch_bing_news.html:103
-#: website/templates/admin/fetch_bing_news.html:103
-msgid "Offset:"
-msgstr "معدل الازاحة:"
-
-#: scrapper/templates/admin/fetch_bing_news.html:104
-#: website/templates/admin/fetch_bing_news.html:104
-msgid "Skip articles"
-msgstr "تخطي المقالات"
-
-#: scrapper/templates/admin/fetch_bing_news.html:114
-#: website/templates/admin/fetch_bing_news.html:114
-msgid "Include Original Images"
-msgstr "تضمين الصور الأصلية"
-
-#: scrapper/templates/admin/fetch_bing_news.html:119
-#: scrapper/templates/admin/fetch_news.html:72
-#: website/templates/admin/fetch_bing_news.html:119
-#: website/templates/admin/fetch_news.html:72
-msgid "Sort By:"
-msgstr "ترتيب حسب:"
-
-#: scrapper/templates/admin/fetch_bing_news.html:121
-#: website/templates/admin/fetch_bing_news.html:121
-msgid "Date"
-msgstr "التاريخ"
-
-#: scrapper/templates/admin/fetch_bing_news.html:122
-#: website/templates/admin/fetch_bing_news.html:122
+#: scrapper/wagtail_hooks.py:30
 msgid "Relevance"
-msgstr "الاهميه"
+msgstr "اهميه"
 
-#: scrapper/templates/admin/fetch_bing_news.html:127
-#: scrapper/templates/admin/fetch_news.html:50
-#: scrapper/templates/admin/fetch_news.html:102 scrapper/wagtail_hooks.py:156
-#: website/templates/admin/fetch_bing_news.html:127
-#: website/templates/admin/fetch_news.html:50
-#: website/templates/admin/fetch_news.html:102
-msgid "Fetch News"
-msgstr "بحث و انشاء مقالة اخبارية"
 
-#: scrapper/templates/admin/fetch_bing_news.html:135
-#: website/templates/admin/fetch_bing_news.html:135
-msgid "Latest Articles"
-msgstr "أحدث المقالات"
 
-#: scrapper/templates/admin/fetch_bing_news.html:144
-#: website/templates/admin/fetch_bing_news.html:144
-msgid "No Image Available"
-msgstr "لا توجد صورة متاحة"
-
-#: scrapper/templates/admin/fetch_bing_news.html:148
-#: scrapper/templates/admin/fetch_news.html:129
-#: scrapper/templates/admin/fetch_news.html:163
-#: website/templates/admin/fetch_bing_news.html:148
-#: website/templates/admin/fetch_news.html:129
-#: website/templates/admin/fetch_news.html:163
-msgid "No Description"
-msgstr "لا يوجد وصف متاح"
-
-#: scrapper/templates/admin/fetch_bing_news.html:151
-#: scrapper/templates/admin/fetch_news.html:135
-#: scrapper/templates/admin/fetch_news.html:169
-#: website/templates/admin/fetch_bing_news.html:151
-#: website/templates/admin/fetch_news.html:135
-#: website/templates/admin/fetch_news.html:169
-msgid "Source:"
-msgstr "مصدر:"
-
-#: scrapper/templates/admin/fetch_bing_news.html:151
-#: website/templates/admin/fetch_bing_news.html:151
-msgid "Unknown"
-msgstr "مجهول"
-
-#: scrapper/templates/admin/fetch_bing_news.html:152
-#: scrapper/templates/admin/fetch_news.html:136
-#: scrapper/templates/admin/fetch_news.html:170
-#: website/templates/admin/fetch_bing_news.html:152
-#: website/templates/admin/fetch_news.html:136
-#: website/templates/admin/fetch_news.html:170
-msgid "Read More"
-msgstr "إقرأ المزيد"
-
-#: scrapper/templates/admin/fetch_bing_news.html:164
-#: scrapper/templates/admin/fetch_news.html:180
-#: website/templates/admin/fetch_bing_news.html:164
-#: website/templates/admin/fetch_news.html:180
-msgid "No articles found."
-msgstr "لم يتم العثور على مقالات."
-
-#: scrapper/templates/admin/fetch_news.html:66
-#: website/templates/admin/fetch_news.html:66
-msgid "Spanish"
-msgstr "الإسبانية"
-
-#: scrapper/templates/admin/fetch_news.html:74
-#: website/templates/admin/fetch_news.html:74
-msgid "Relevancy"
-msgstr "التوافق"
-
-#: scrapper/templates/admin/fetch_news.html:75
-#: website/templates/admin/fetch_news.html:75
-msgid "Popularity"
-msgstr "الشعبيه"
-
-#: scrapper/templates/admin/fetch_news.html:76
-#: website/templates/admin/fetch_news.html:76
-msgid "Published Date"
-msgstr "تاريخ النشر"
-
-#: scrapper/templates/admin/fetch_news.html:82
-#: website/templates/admin/fetch_news.html:82
-msgid "From Date:"
-msgstr "من التاريخ:"
-
-#: scrapper/templates/admin/fetch_news.html:86
-#: website/templates/admin/fetch_news.html:86
-msgid "To Date:"
-msgstr "الى التاريخ:"
-
-#: scrapper/templates/admin/fetch_news.html:92
-#: website/templates/admin/fetch_news.html:92
-msgid "Sources (comma-separated):"
-msgstr "المصادر (مفصولة بفواصل):"
-
-#: scrapper/templates/admin/fetch_news.html:93
-#: website/templates/admin/fetch_news.html:93
-msgid "e.g., cnn, bbc-news, the-verge"
-msgstr "على سبيل المثال ، سي إن إن ، بي بي سي نيوز ، ذا فيرج"
-
-#: scrapper/templates/admin/fetch_news.html:96
-#: website/templates/admin/fetch_news.html:96
-msgid "Number of Articles (1-100):"
-msgstr "عدد المواد (1-100):"
-
-#: scrapper/templates/admin/fetch_news.html:121
-#: scrapper/templates/admin/fetch_news.html:155
-#: website/templates/admin/fetch_news.html:121
-#: website/templates/admin/fetch_news.html:155
-msgid "Article Image"
-msgstr "صورة المقال"
-
-#: scrapper/templates/admin/fetch_news.html:124
-#: scrapper/templates/admin/fetch_news.html:158
-#: website/templates/admin/fetch_news.html:124
-#: website/templates/admin/fetch_news.html:158
-msgid "Create a Page"
-msgstr "إنشاء مقالة من هذا الخبر"
-
-#: scrapper/templates/admin/fetch_news.html:128
-#: scrapper/templates/admin/fetch_news.html:162
-#: website/templates/admin/fetch_news.html:128
-#: website/templates/admin/fetch_news.html:162
-msgid "No Title"
-msgstr "لا يوجد عنوان"
-
-#: scrapper/templates/admin/fetch_news.html:131
-#: scrapper/templates/admin/fetch_news.html:165
-#: website/templates/admin/fetch_news.html:131
-#: website/templates/admin/fetch_news.html:165
-msgid "Published:"
-msgstr "نشر:"
-
-#: scrapper/templates/admin/fetch_news.html:131
-#: scrapper/templates/admin/fetch_news.html:165
-#: website/templates/admin/fetch_news.html:131
-#: website/templates/admin/fetch_news.html:165
-msgid "N/A"
-msgstr "غير متوفر"
-
-#: scrapper/templates/admin/fetch_news.html:135
-#: scrapper/templates/admin/fetch_news.html:169
-#: website/templates/admin/fetch_news.html:135
-#: website/templates/admin/fetch_news.html:169
-msgid "Unknown Source"
-msgstr "مصدر غير معروف"
-
-#: scrapper/wagtail_hooks.py:88
+#: scrapper/wagtail_hooks.py:109
 msgid "Fetch Bing News"
-msgstr "جلب أخبار من ميكروسوفت bing"
+msgstr "جلب أخبار بنج"
+
+#: scrapper/wagtail_hooks.py:124
+#| msgid "Business"
+msgid "business"
+msgstr "مهنة"
+
+#: scrapper/wagtail_hooks.py:124
+#| msgid "Entertainment"
+msgid "entertainment"
+msgstr "ترفيه"
+
+#: scrapper/wagtail_hooks.py:124
+msgid "general"
+msgstr "عام"
+
+#: scrapper/wagtail_hooks.py:125
+msgid "health"
+msgstr "الصحة"
+
+#: scrapper/wagtail_hooks.py:125
+msgid "science"
+msgstr "علم"
+
+#: scrapper/wagtail_hooks.py:125
+#| msgid "Sports"
+msgid "sports"
+msgstr "رياضي"
+
+#: scrapper/wagtail_hooks.py:125
+#| msgid "Technology"
+msgid "technology"
+msgstr "التقنية"
+
+#: scrapper/wagtail_hooks.py:127
+#| msgid "Relevancy"
+msgid "relevancy"
+msgstr "اهميه"
+
+#: scrapper/wagtail_hooks.py:127
+#| msgid "Popularity"
+msgid "popularity"
+msgstr "شعبيه"
+
+#: scrapper/wagtail_hooks.py:127
+#| msgid "Published:"
+msgid "publishedAt"
+msgstr "نشرت في"
+
+
+
+
+#: scrapper/wagtail_hooks.py:193
+msgid "Proposals"
+msgstr "مقترحات"
 
 #: wagtail_ai/forms.py:11
 msgid "No text provided - please enter some text before using AI features."
@@ -433,7 +2086,7 @@ msgstr ""
 
 #: wagtail_ai/forms.py:18 wagtail_ai/forms.py:19 wagtail_ai/views.py:117
 msgid "Invalid prompt provided."
-msgstr "تم تقديم طلب غير صحيح"
+msgstr "تم تقديم مطالبة غير صالحة."
 
 #: wagtail_ai/forms.py:58
 msgid "Describe image using AI"
@@ -495,11 +2148,7 @@ msgstr "حرر"
 
 #: wagtail_word/models.py:46
 msgid "Promote"
-msgstr "ترقية"
-
-#: wagtail_word/models.py:47
-msgid "Settings"
-msgstr "اعدادات"
+msgstr "رقى"
 
 #: wagtail_word/models.py:51
 msgid "Word Document Article"
@@ -528,7 +2177,7 @@ msgstr "من نحن"
 #: wagtail_word/templates/base_word_document_page.html:65
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:72
 msgid "Denti-Board"
-msgstr "لوح التحكم"
+msgstr "مجلس دينتي"
 
 #: wagtail_word/templates/base_word_document_page.html:66
 #: wagtail_word/templates/wagtail_word/base_word_document_page.html:73
@@ -550,85 +2199,274 @@ msgstr "لا توجد مشاركات حديثة متاحة."
 msgid "Latest Gallery"
 msgstr "أحدث معرض"
 
-#: website/templates/coderedcms/blocks/film_strip_block.html:28
-#: website/templates/coderedcms/includes/pagination.html:8
-msgid "Previous"
-msgstr "سابق"
+#: website/models.py:384
+#| msgid "Published:"
+msgid "Show Only Published"
+msgstr "عرض نشرت فقط"
 
-#: website/templates/coderedcms/blocks/film_strip_block.html:31
-#: website/templates/coderedcms/includes/pagination.html:16
-msgid "Next"
-msgstr "التالي"
+#: website/models.py:385
+msgid "Show only proposals with a publication date in the past."
+msgstr "اعرض فقط المقترحات التي لها تاريخ نشر في الماضي."
 
-#: website/templates/coderedcms/includes/classifier_dropdowns.html:5
-msgid "Filter by"
-msgstr "تصفية حسب"
+#: website/templates/admin/fetch_bing_news.html:41
+msgid "Search the headlines"
+msgstr "البحث في العناوين"
 
-#: website/templates/coderedcms/includes/classifier_dropdowns.html:11
-msgid "Filter"
-msgstr "فلترة"
+#: website/templates/admin/fetch_bing_news.html:52
+#| msgid "Search Query:"
+msgid "Search Query"
+msgstr "استعلام البحث"
 
-#: website/templates/coderedcms/includes/classifier_dropdowns.html:12
-#: website/templates/coderedcms/includes/classifier_nav.html:6
-msgid "All"
-msgstr "الكل"
+#: website/templates/admin/fetch_bing_news.html:53
+msgid "Enter a search term"
+msgstr "أدخل مصطلح بحث"
 
-#: website/templates/coderedcms/includes/form_honeypot.html:3
-msgid "Leave this blank if you are a human"
-msgstr "اترك هذا فارغا لتاكيد انك لست بوتج"
+#: website/templates/admin/fetch_bing_news.html:57
+#| msgid "Category:"
+msgid "Select Category"
+msgstr "اختر الفئة"
 
-#: website/templates/coderedcms/includes/iframe_gmap.html:5
-msgid "Map of"
-msgstr "خريطة"
+#: website/templates/admin/fetch_bing_news.html:59
+msgid "-- Select a Category --"
+msgstr "-- اختر فئة --"
 
-#: website/templates/coderedcms/includes/pagination.html:12
-msgid "Page"
-msgstr "صفحة"
+#: website/templates/admin/fetch_bing_news.html:67
+#| msgid "Sort By:"
+msgid "Sort By"
+msgstr "ترتيب حسب"
 
-#: website/templates/coderedcms/includes/pagination.html:12
-msgid "of"
-msgstr "من"
+#: website/templates/admin/fetch_bing_news.html:76
+#| msgid "Number of Articles:"
+msgid "Number of Articles"
+msgstr "عدد المقالات"
 
-#: website/templates/coderedcms/pages/base.html:153
-msgid "Related"
-msgstr "ذات الصله"
+#: website/templates/admin/fetch_bing_news.html:91
+msgid "Look Randomly for News"
+msgstr "ابحث بشكل عشوائي عن الأخبار"
 
-#: website/templates/coderedcms/pages/form_page_landing.html:5
-msgid "Thank You"
-msgstr "شكرا"
+#: website/templates/admin/fetch_bing_news.html:98
+msgid "Latest Articles"
+msgstr "أحدث المقالات"
 
-#: website/templates/coderedcms/pages/form_page_landing.html:6
-msgid "We have successfully received your submission."
-msgstr "لقد تلقينا طلبك بنجاح."
+#: website/templates/admin/fetch_bing_news.html:109
+msgid "Your browser does not support the video tag."
+msgstr "متصفحك لا يدعم علامة الفيديو."
 
-#: website/templates/coderedcms/pages/search.html:7
-#: website/templates/coderedcms/pages/search.html:14
-#: website/templates/coderedcms/pages/search.html:32
-#: website/templates/coderedcms/snippets/navbar.html:37
-msgid "Search"
-msgstr "بحث"
+#: website/templates/admin/fetch_bing_news.html:117
+msgid "No Image Available"
+msgstr "لا توجد صورة متاحة"
 
-#: website/templates/coderedcms/pages/search.html:7
-#: website/templates/coderedcms/pages/search.html:16
-msgid "Search for"
-msgstr "بحث"
+#: website/templates/admin/fetch_bing_news.html:120
+msgid "Create a Page"
+msgstr "إنشاء صفحة"
 
-#: website/templates/coderedcms/pages/search.html:45
-msgid "All Results"
-msgstr "جميع النتائج"
+#: website/templates/admin/fetch_bing_news.html:127
+#| msgid "Category:"
+msgid "No category"
+msgstr "لا توجد فئة"
 
-#: website/templates/coderedcms/pages/search.html:80
-msgid "No results found."
-msgstr "لم يتم العثور على نتائج."
+#: website/templates/admin/fetch_bing_news.html:128
+msgid "No Description"
+msgstr "لا يوجد وصف"
 
-#: website/templates/coderedcms/widgets/checkbox_classifiers.html:31
-msgid "Organize Pages with Classifiers"
-msgstr "تنظيم الصفحات باستخدام المصنفات"
+#: website/templates/admin/fetch_bing_news.html:137
+msgid "Unknown"
+msgstr "مجهول"
 
-#: website/templates/coderedcms/widgets/checkbox_classifiers.html:33
-msgid "Use Classifiers to create custom categories and filters."
-msgstr "استخدم المصنفات لإنشاء فئات وفلاتر مخصصة."
+#: website/templates/admin/fetch_bing_news.html:139
+#| msgid "Published:"
+msgid "Published on:"
+msgstr "نشر في:"
 
-#: website/templates/coderedcms/widgets/checkbox_classifiers.html:37
-msgid "Add Classifier"
-msgstr "إضافة مصنف"
+#: website/templates/admin/fetch_bing_news.html:142
+msgid "Read Full Article"
+msgstr "اقرأ المقال كاملا"
+
+#: website/templates/admin/fetch_bing_news.html:152
+#: website/templates/admin/fetch_news.html:160
+msgid "No articles found."
+msgstr "لم يتم العثور على مقالات."
+
+#: website/templates/admin/fetch_bing_news.html:193
+msgid "Page created successfully!"
+msgstr "تم إنشاء الصفحة بنجاح!"
+
+#: website/templates/admin/fetch_bing_news.html:196
+#: website/templates/admin/fetch_bing_news.html:199
+msgid "Error:"
+msgstr "خطأ:"
+
+#: website/templates/admin/fetch_news.html:51
+#: website/templates/admin/fetch_news.html:122
+msgid "Fetch News"
+msgstr "بحث و انشاء مقالة اخبارية"
+
+#: website/templates/admin/fetch_news.html:57
+msgid "Search Query:"
+msgstr "ادخل الكلمات المفتاحية:"
+
+#: website/templates/admin/fetch_news.html:58
+msgid "Enter keywords..."
+msgstr "يمكنك ادخال مفردات او جمل مثلا : فلسطين ، دونالد ترامب .."
+
+#: website/templates/admin/fetch_news.html:63
+#| msgid "Country Code:"
+msgid "Country:"
+msgstr "في اي بلد ؟"
+
+#: website/templates/admin/fetch_news.html:65
+#: website/templates/admin/fetch_news.html:74
+#: website/templates/admin/fetch_news.html:85
+msgid "Any"
+msgstr "الكل "
+
+#: website/templates/admin/fetch_news.html:72
+msgid "Category:"
+msgstr "الصنف :"
+
+#: website/templates/admin/fetch_news.html:83
+msgid "Language:"
+msgstr "اللغة:"
+
+#: website/templates/admin/fetch_news.html:92
+msgid "Sort By:"
+msgstr "ترتيب حسب:"
+
+#: website/templates/admin/fetch_news.html:102
+msgid "Sources (comma-separated):"
+msgstr "المصادر (مفصولة بفواصل):"
+
+#: website/templates/admin/fetch_news.html:103
+#| msgid "e.g., cnn, bbc-news, the-verge"
+msgid "e.g., cnn, bbc-news"
+msgstr "على سبيل المثال ، سي إن إن ، بي بي سي نيوز ، ذا فيرج"
+
+#: website/templates/admin/fetch_news.html:106
+msgid "Number of Articles (1-100):"
+msgstr "عدد المواد (1-100):"
+
+#: website/templates/admin/fetch_news.html:112
+msgid "From Date:"
+msgstr "من التاريخ:"
+
+#: website/templates/admin/fetch_news.html:116
+msgid "To Date:"
+msgstr "الى التاريخ:"
+
+#: website/templates/admin/fetch_news.html:139
+msgid "Article Image"
+msgstr "صورة المقال"
+
+#: website/templates/admin/fetch_news.html:143
+msgid "Published:"
+msgstr "نشر:"
+
+#: website/templates/admin/fetch_news.html:146
+msgid "Read Original Article"
+msgstr "اقرأ المقال الأصلي"
+
+#: website/templates/admin/fetch_news.html:147
+msgid "Source:"
+msgstr "مصدر:"
+
+#~ msgid "Advanced Bing News Search"
+#~ msgstr "البحث المتقدم في أخبار Bing"
+
+#~ msgid "United States"
+#~ msgstr "الولايات المتحدة الأمريكية"
+
+#~ msgid "United Kingdom"
+#~ msgstr "المملكة المتحدة"
+
+#~ msgid "France"
+#~ msgstr "فرنسا"
+
+#~ msgid "Germany"
+#~ msgstr "ألمانيا"
+
+#~ msgid "Freshness:"
+#~ msgstr "الشريط الزمني :"
+
+#~ msgid "Last 24 hours"
+#~ msgstr "آخر 24 ساعة"
+
+#~ msgid "Last 7 days"
+#~ msgstr "آخر 7 أيام"
+
+#~ msgid "Last 30 days"
+#~ msgstr "آخر 30 يوم"
+
+#~ msgid "Safe Search:"
+#~ msgstr "البحث الآمن:"
+
+#~ msgid "Off"
+#~ msgstr "ايقاف"
+
+#~ msgid "Moderate"
+#~ msgstr "متوسط"
+
+#~ msgid "Strict"
+#~ msgstr "صارم"
+
+#~ msgid "Market:"
+#~ msgstr "المنطقة "
+
+#~ msgid "US Flag"
+#~ msgstr "علم الولايات المتحدة"
+
+#~ msgid "English (US)"
+#~ msgstr "امريكا الشمالية"
+
+#~ msgid "French (FR)"
+#~ msgstr "غرب اوروبا "
+
+#~ msgid "Arabic (SA)"
+#~ msgstr "الشرق الاوسط"
+
+#~ msgid "German (DE)"
+#~ msgstr "وسط اوروبا"
+
+#~ msgid "Turkish (TR)"
+#~ msgstr "الاناضول"
+
+#~ msgid "English Flag"
+#~ msgstr "العلم الإنجليزي"
+
+#~ msgid "English"
+#~ msgstr "الإنكليزية"
+
+#~ msgid "French"
+#~ msgstr "الفرنسية"
+
+#~ msgid "Arabic"
+#~ msgstr "العربية"
+
+#~ msgid "German"
+#~ msgstr "الألمانية"
+
+#~ msgid "Turkish"
+#~ msgstr "التركية"
+
+#~ msgid "Offset:"
+#~ msgstr "معدل الازاحة:"
+
+#~ msgid "Skip articles"
+#~ msgstr "تخطي المقالات"
+
+#~ msgid "Include Original Images"
+#~ msgstr "تضمين الصور الأصلية"
+
+#~ msgid "Read More"
+#~ msgstr "إقرأ المزيد"
+
+#~ msgid "Spanish"
+#~ msgstr "الإسبانية"
+
+#~ msgid "Published Date"
+#~ msgstr "تاريخ النشر"
+
+#~ msgid "N/A"
+#~ msgstr "غير متوفر"
+
+#~ msgid "Unknown Source"
+#~ msgstr "مصدر غير معروف"

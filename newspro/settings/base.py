@@ -61,7 +61,9 @@ INSTALLED_APPS = [
     "wagtail.admin",
     'wagtail_ai',
     'debug_toolbar',
-    'rosetta',# Add this line
+    'rosetta',
+    'django_extensions',
+
     # Django
     "django.contrib.admin",
     "django.contrib.auth",
@@ -254,3 +256,12 @@ WAGTAIL_AI = {
 LOCALE_PATHS = [
     '/home/lotfikan/wiznewzx/locale',
 ]
+
+WAGTAILLOCALIZE_MACHINE_TRANSLATOR = {
+    "CLASS": "translations.azure.AzureTranslator",
+    "OPTIONS": {
+        'subscription_key': 'DyKiBjFhkd79pVIavqRKuguK8gEf43LoCoKGFKLyVhol0O0U1KnhJQQJ99AKACF24PCXJ3w3AAAbACOGWjz4',  # Replace with your actual subscription key
+        'region': 'uaenorth',
+    }
+}
+

@@ -1,75 +1,97 @@
-from wagtail.admin.menu import MenuItem, Menu
+import requests
+from wagtail.admin.menu import MenuItem
 from wagtail import hooks
 from django.urls import path, reverse
 from django.shortcuts import render
 from django.conf import settings
-from django.http import JsonResponse
-import requests
+from django.utils.translation import gettext_lazy as _
 import logging
-from django.utils.translation import gettext_lazy as _  # For translations
+import json
+from datetime import datetime
 
 # Setup logging
 logger = logging.getLogger(__name__)
 
-BING_NEWS_API_KEY = settings.BING_NEWS_API_KEY  # Ensure you add this in your settings
+# API Key
+BING_NEWS_API_KEY = settings.BING_NEWS_API_KEY
+
+# Base URL for Bing News API
+BASE_URL = "https://api.bing.microsoft.com/v7.0/news"
+
+# Valid categories for en-US
+valid_categories = [
+    _("Business"), _("Entertainment"), _("Health"), _("Politics"), _("Products"),
+    _("ScienceAndTechnology"), _("Sports"), _("Sports_Soccer"), _("Sports_Tennis"),
+    _("US"), _("World"), _("World_Africa"), _("World_Americas"), _("World_Asia"),
+    _("World_Europe"), _("World_MiddleEast")
+]
+
+# Sort options for frontend
+sort_options = [_("Date"), _("Relevance")]
+
+# Count options for articles (frontend + backend)
+count_options = [20, 50, 100]
 
 def fetch_bing_news_view(request):
     articles = []
+    raw_response = None
     error_message = None
 
     if request.method == 'POST':
-        # Capture form parameters
-        query = request.POST.get('query', '')
-        cc = request.POST.get('cc', '')
-        category = request.POST.get('category', '')
-        freshness = request.POST.get('freshness', '')
-        count = request.POST.get('count', 10)
-        offset = request.POST.get('offset', 0)
-        mkt = request.POST.get('mkt', '')
-        setLang = request.POST.get('setLang', '')
-        originalImg = request.POST.get('originalImg', False)  # Correct boolean
-        safeSearch = request.POST.get('safeSearch', 'Moderate')
-        sortBy = request.POST.get('sortBy', 'Relevance')
-
-        # Define API endpoint URL
-        url = "https://api.bing.microsoft.com/v7.0/news/search"
-
-        # Build parameters dict only for non-empty values
-        params = {
-            'q': query,
-            'cc': cc,
-            'category': category,
-            'freshness': freshness,
-            'count': count,
-            'offset': offset if offset else None,
-            'mkt': mkt if mkt else None,
-            'setLang': setLang if setLang else None,
-            'originalImg': 'true' if originalImg else 'false',
-            'safeSearch': safeSearch,
-            'sortBy': sortBy,
-        }
-
-        # Remove keys with None values
-        params = {k: v for k, v in params.items() if v}
+        query = request.POST.get('query', None)
+        category = request.POST.get('category', None)
+        sort_by = request.POST.get('sort_by', 'Relevance')
+        count = int(request.POST.get('count', 20))
 
         headers = {
-            'Ocp-Apim-Subscription-Key': BING_NEWS_API_KEY,
+            "Ocp-Apim-Subscription-Key": BING_NEWS_API_KEY
+        }
+
+        params = {
+            "count": count,
+            "sortBy": sort_by,
+            "originalImg": "true"
         }
 
         try:
-            response = requests.get(url, headers=headers, params=params)
+            if query:
+                params["q"] = query
+                params["mkt"] = "en-US"
+                endpoint = f"{BASE_URL}/search"
+            elif category:
+                params["category"] = category
+                params["mkt"] = "en-US"
+                endpoint = BASE_URL
+            else:
+                params["q"] = ""
+                endpoint = BASE_URL
+
+            response = requests.get(endpoint, headers=headers, params=params)
             response.raise_for_status()
-            articles = response.json().get('value', [])
+            raw_response = response.json()
+
+            # Extract and format articles
+            articles = raw_response.get('value', [])
+            for article in articles:
+                if 'datePublished' in article:
+                    iso_date = article['datePublished']
+                    article['formatted_date'] = datetime.fromisoformat(iso_date.replace("Z", "+00:00")).strftime('%d/%m/%Y %H:%M')
+                if 'image' in article and 'thumbnail' in article['image']:
+                    thumbnail_url = article['image']['thumbnail']['contentUrl']
+                    height = article['image']['thumbnail'].get('height', 400)
+                    article['resized_thumbnail'] = f"{thumbnail_url}&h={height}&p=0"
+
         except requests.exceptions.RequestException as e:
-            error_message = f"Error fetching news: {str(e)}"
-            logger.error(f"Bing News API request failed: {e}")
-        except ValueError as e:
-            error_message = "Error parsing response. Please try again later."
-            logger.error(f"Response parsing error: {e}")
+            error_message = _("Error fetching news: %(error)s") % {'error': str(e)}
+            logger.error(_("Bing News API request failed: %(error)s") % {'error': e})
 
     context = {
         'articles': articles,
+        'raw_response': raw_response,  # Keep raw response available for template (if needed)
         'error_message': error_message,
+        'valid_categories': valid_categories,
+        'sort_options': sort_options,
+        'count_options': count_options
     }
 
     return render(request, 'admin/fetch_bing_news.html', context)
@@ -81,17 +103,14 @@ def register_bing_news_fetch_url():
         path('fetch-bing-news/', fetch_bing_news_view, name='fetch_bing_news'),
     ]
 
-
 @hooks.register("register_admin_menu_item")
 def register_fetch_bing_news_menu_item():
     return MenuItem(
-        _("Fetch Bing News"),
+        _("Proposals"),
         reverse("fetch_bing_news"),
         icon_name="bold",
-        order=101,
+        order=102,
     )
-
-
 
 NEWS_API_KEY = settings.NEWS_API_KEY
 
@@ -99,47 +118,65 @@ def fetch_news_view(request):
     articles = []
     error_message = None
 
+    # Permanent valid options
+    valid_countries = ['us', 'gb', 'fr', 'de', 'it', 'es']
+    valid_categories = [
+        _('business'), _('entertainment'), _('general'),
+        _('health'), _('science'), _('sports'), _('technology')
+    ]
+    valid_sort_options = [_('relevancy'), _('popularity'), _('publishedAt')]
+    news_languages = ['ar', 'fr', 'en', 'it', 'tr', 'he']
+
     if request.method == 'POST':
         query = request.POST.get('query', '')
         language = request.POST.get('language', '')
-        sort_by = request.POST.get('sortBy', 'publishedAt')
+        sources = request.POST.get('sources', '')
         from_date = request.POST.get('from', '')
         to_date = request.POST.get('to', '')
-        sources = request.POST.get('sources', '')
-        page_size = request.POST.get('pageSize', 10)
-
-        url = "https://newsapi.org/v2/everything"
-        params = {
-            'q': query,
-            'language': language,
-            'sortBy': sort_by,
-            'from': from_date,
-            'to': to_date,
-            'sources': sources,
-            'pageSize': page_size,
-            'apiKey': NEWS_API_KEY
-        }
+        sort_by = request.POST.get('sortBy', 'publishedAt')
+        page_size = request.POST.get('pageSize', 20)
+        page = request.POST.get('page', 1)
 
         try:
-            response = requests.get(url, params=params)
-            response.raise_for_status()  # Raise HTTPError for bad responses (4xx and 5xx)
-            raw_articles = response.json().get('articles', [])
+            response = newsapi.get_everything(
+                q=query,
+                language=language if language in news_languages else None,
+                sources=sources or None,
+                from_param=from_date or None,
+                to=to_date or None,
+                sort_by=sort_by if sort_by in valid_sort_options else 'publishedAt',
+                page_size=int(page_size),
+                page=int(page)
+            )
 
-            # Filter out articles marked as "[Removed]"
+            # Filter out unwanted articles
+            raw_articles = response.get('articles', [])
             articles = [
-                article for article in raw_articles
-                if not (article.get('title') == '[Removed]' or article.get('description') == '[Removed]' or article.get('source', {}).get('name') == '[Removed]')
+                {
+                    'title': article['title'],
+                    'description': article['description'],
+                    'url': article['url'],
+                    'urlToImage': article['urlToImage'],
+                    'publishedAt': article['publishedAt'],  # Pass as string
+                    'source': article['source']['name']
+                }
+                for article in raw_articles
+                if article['title'] != '[Removed]' and article['description'] != '[Removed]'
+                and article['source']['name'] != '[Removed]'
             ]
-        except requests.exceptions.RequestException as e:
-            error_message = f"Error fetching news: {str(e)}"
-            logger.error(f"News API request failed: {e}")
-        except ValueError as e:
-            error_message = "Error parsing response. Please try again later."
-            logger.error(f"Response parsing error: {e}")
+
+            logger.debug(_("Filtered Articles: %(articles)s") % {'articles': articles})
+        except Exception as e:
+            error_message = _("Error fetching NewsAPI data: %(error)s") % {'error': str(e)}
+            logger.error(_("News API request failed: %(error)s") % {'error': e})
 
     context = {
         'articles': articles,
         'error_message': error_message,
+        'valid_countries': valid_countries,  # Include valid countries in context
+        'valid_categories': valid_categories,  # Include valid categories in context
+        'valid_sort_options': valid_sort_options,
+        'news_languages': news_languages,
     }
 
     return render(request, 'admin/fetch_news.html', context)
@@ -150,14 +187,11 @@ def register_fetch_news_url():
         path('fetch-news/', fetch_news_view, name='fetch_news'),
     ]
 
-@hooks.register("register_admin_menu_item")
-def register_fetch_news_menu_item():
-    return MenuItem(
-        _("Fetch News"),
-        reverse("fetch_news"),
-        icon_name="snippet",
-        order=102,
-    )
-
-
-
+# @hooks.register("register_admin_menu_item")
+# def register_fetch_news_menu_item():
+#     return MenuItem(
+#         _("Proposals"),
+#         reverse("fetch_news"),
+#         icon_name="snippet",
+#         order=102,
+#     )

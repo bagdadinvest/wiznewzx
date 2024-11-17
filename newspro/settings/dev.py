@@ -13,7 +13,7 @@ INSTALLED_APPS += [  # noqa
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://app.wisdar-emp.online'
+    'https://app.wisdar-emp.online','https://dev.wisdar-emp.online'
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

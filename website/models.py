@@ -259,36 +259,112 @@ class Footer(models.Model):
         return self.name
 
 
-from wagtail.admin.panels import FieldPanel
-from wagtail.fields import RichTextField
-from django.db import models
 import uuid
-from wagtail.images.blocks import ImageChooserBlock
-from wagtail.images.models import Image
-from wagtail.admin.panels import FieldPanel
+from coderedcms.models.page_models import CoderedWebPage
+from wagtail.fields import RichTextField
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+from django.db import models
+from django.conf import settings
+from django.utils.translation import gettext_lazy as _
+from wagtail.models import TranslatableMixin
 
-def generate_unique_sku():
-    return uuid.uuid4().hex[:12].upper()
 
-class CustomArticlePage(ArticlePage):
-    sku = models.CharField(
-        max_length=12,
-        unique=True,
-        default=generate_unique_sku,  # Use the helper function
-        verbose_name="SKU"
-    )
-    additional_content = RichTextField(
+
+class ProposalPage(CoderedWebPage):
+    """A model for managing proposals with specific metadata and content."""
+
+    caption = RichTextField(
         blank=True,
-        verbose_name="Additional Rich Content",
-        help_text="Rich text content for extra details."
+        verbose_name="Caption",
+        help_text="A rich-text field for the proposal's caption."
     )
 
-    content_panels = ArticlePage.content_panels + [
-        FieldPanel("cover_image"),
-        FieldPanel("sku"),
-        FieldPanel("additional_content"),
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        editable=True,
+        on_delete=models.SET_NULL,
+        verbose_name=_("Author"),
+        help_text="The owner of the proposal."
+    )
+
+    display_author_as = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name="Display Author As",
+        help_text="Overrides how the author’s name displays on this proposal."
+    )
+
+    source = models.CharField(
+        max_length=255,
+        blank=True,
+        verbose_name="Source",
+        help_text="The source of the proposal, indicating its origin."
+    )
+
+    publication_date = models.DateField(
+        blank=True,
+        null=True,
+        verbose_name="Publication Date",
+        help_text="Date when the proposal is published or made available."
+    )
+
+
+    content_panels = CoderedWebPage.content_panels + [
+        FieldPanel('caption'),
+        MultiFieldPanel(
+            [
+                FieldPanel('author'),
+                FieldPanel('display_author_as'),
+                FieldPanel('source'),
+                FieldPanel('publication_date'),
+            ],
+            heading="Proposal Metadata",
+        ),
     ]
 
     class Meta:
-        verbose_name = "Custom Article Page"
-    template = "coderedcms/pages/article_page.html"
+        verbose_name = "Proposal Page"
+        ordering = ['-publication_date']  # Order by most recent first
+
+    parent_page_types = ["website.ProposalIndexPage"]
+
+
+class ProposalIndexPage(CoderedWebPage):
+    """
+    Index page for listing all proposals. Automatically retrieves and displays
+    child ProposalPage instances.
+    """
+
+    show_only_published = models.BooleanField(
+        default=True,
+        verbose_name=_("Show Only Published"),
+        help_text=_("Show only proposals with a publication date in the past."),
+    )
+
+    content_panels = CoderedWebPage.content_panels + [
+        FieldPanel('show_only_published'),
+    ]
+
+    def get_child_pages(self):
+        """
+        Retrieves child ProposalPage instances, optionally filtering by
+        publication status.
+        """
+        queryset = ProposalPage.objects.child_of(self).live()
+        if self.show_only_published:
+            queryset = queryset.filter(publication_date__lte=models.F('go_live_at') or models.functions.Now())
+        return queryset
+
+
+    class Meta:
+        verbose_name = "Proposal Index Page"
+        ordering = ['-go_live_at']
+
+    index_query_pagemodel = "website.ProposalPage"
+
+    # Only allow ArticlePages beneath this page.
+    subpage_types = ["website.ProposalPage"]
+
+
