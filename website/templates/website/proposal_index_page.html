@@ -6,66 +6,68 @@
 {% if page.index_show_subpages %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1 class="text-center">{{ self.title }}</h1>
-    <p class="text-center">{{ self.search_description }}</p>
-
-    <div class="row">
-        {% for proposal in self.get_child_pages %}
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm rounded proposal-card position-relative">
-                    {% if proposal.cover_image %}
-                        <img src="{{ proposal.cover_image.file.url }}" class="card-img-top" alt="{{ proposal.title }}">
-                    {% else %}
-                        <img src="{% static 'nopic.png' %}" class="card-img-top" alt="No image available">
-                    {% endif %}
-
-                    <!-- Tick Icon -->
-                    <div class="tick-icon" style="display: none;">
-                        <i class="fas fa-check-circle text-success"></i>
+<!-- Popular Items Section -->
+<!-- Popular Items Section -->
+<section class="popular-item-area fix pt-padding">
+    <h2>Popular Items</h2>
+    <div class="container-fluid p-0">
+        <div class="custom-row">
+            <div class="popular-item owl-carousel">
+                {% for proposal in popular_items %}
+                    <div class="single-items">
+                        <div class="items-img">
+                            <img src="{{ proposal.cover_image.file.url }}" alt="">
+                            <div class="slider-caption">
+                                <a href="{{ proposal.url }}" class="small-btn mb-10">{{ proposal.title }}</a>
+                                <p>{{ proposal.publication_date|date:"d M Y" }} | by {{ proposal.display_author_as }}</p>
+                            </div>
+                        </div>
                     </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
 
-                    <div class="card-body">
-                        <h5 class="card-title">{{ proposal.title }}</h5>
-                        <p class="card-text">{{ proposal.caption|truncatewords:20 }}</p>
-                        <p class="text-muted">
-                            <small>Source: {{ proposal.source }}</small><br>
-                            <small>Published on: {{ proposal.publication_date }}</small>
-                        </p>
-                        <a href="{{ proposal.url }}" class="btn btn-primary w-100">Read More</a>
+<!-- Trending Area Section -->
+<section class="trending-area section-padding">
+    <h2>Trending Now</h2>
+    <div class="container">
+        <div class="row">
+            {% for proposal in trending_area %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="trending mb-30">
+                        <div class="trend-top-img">
+                            <img src="{{ proposal.cover_image.file.url }}" alt="">
+                            <div class="trend-top-cap">
+                                <h2><a href="{{ proposal.url }}">{{ proposal.title }}</a></h2>
+                                <p>{{ proposal.publication_date|date:"d M Y" }} | by {{ proposal.display_author_as }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% empty %}
-            <p class="text-center">No proposals available at the moment.</p>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
+</section>
 
-    <!-- Pagination -->
-    {% if self.paginated_pages.has_previous or self.paginated_pages.has_next %}
-        <nav>
-            <ul class="pagination justify-content-center">
-                {% if self.paginated_pages.has_previous %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ self.paginated_pages.previous_page_number }}">&laquo; Previous</a>
-                    </li>
-                {% endif %}
-
-                {% for i in self.paginated_pages.paginator.page_range %}
-                    <li class="page-item {% if self.paginated_pages.number == i %}active{% endif %}">
-                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
-                    </li>
-                {% endfor %}
-
-                {% if self.paginated_pages.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ self.paginated_pages.next_page_number }}">Next &raquo;</a>
-                    </li>
-                {% endif %}
-            </ul>
-        </nav>
-    {% endif %}
-</div>
+<!-- What's New Section -->
+<section class="whats-new-area pt-50 pb-20">
+    <h2>What's New</h2>
+    <div class="container">
+        <div class="row">
+            {% for proposal in whats_new %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="whats-new-item">
+                        <img src="{{ proposal.cover_image.file.url }}" alt="">
+                        <h3><a href="{{ proposal.url }}">{{ proposal.title }}</a></h3>
+                        <p>{{ proposal.publication_date|date:"d M Y" }} | by {{ proposal.display_author_as }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 <!-- Floating Popup for Selected Articles -->
 <div id="selected-count-popup" class="position-fixed bottom-0 start-0 m-3 bg-light shadow-lg rounded p-3" style="display: none;">

@@ -1,61 +1,49 @@
+import os
+from pyvirtualdisplay import Display
 from playwright.sync_api import sync_playwright
 
-def scrape_article_content(url):
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        page.goto(url, timeout=60000)  # Load the article page
+# Define a temporary directory for storing PDFs
+TEMP_PDF_DIR = "pdfs"
+os.makedirs(TEMP_PDF_DIR, exist_ok=True)
 
-        # Content structure
-        content_structure = {
-            "h1": None,
-            "h2": [],
-            "h3": [],
-            "h4": [],
-            "paragraphs": []
-        }
+def save_page_as_pdf(url, title):
+    """Export the given webpage as a PDF."""
+    # Start the virtual display
+    display = Display(visible=False, size=(1920, 1080))
+    display.start()
 
-        try:
-            # Scrape the <h1> title
-            title_element = page.query_selector('h1')
-            content_structure["h1"] = title_element.inner_text().strip() if title_element else "None"
+    try:
+        # Run Playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)  # Must be headless for PDF
+            context = browser.new_context()
+            page = context.new_page()
 
-            # Locate main content area
-            main_container = page.query_selector('article, .content, .article-body, .main-content')
-            if main_container:
-                elements = main_container.query_selector_all('h2, h3, h4, p')
+            # Navigate to the URL
+            page.goto(url, timeout=60000, wait_until="domcontentloaded")
+            page.wait_for_timeout(5000)
 
-                # Categorize elements
-                for element in elements:
-                    tag_name = element.evaluate('(element) => element.tagName.toLowerCase()')
-                    text_content = element.inner_text().strip()
+            # Set PDF output path
+            pdf_path = os.path.join(TEMP_PDF_DIR, f"{title}.pdf")
 
-                    if tag_name == 'h2':
-                        content_structure['h2'].append(text_content)
-                    elif tag_name == 'h3':
-                        content_structure['h3'].append(text_content)
-                    elif tag_name == 'h4':
-                        content_structure['h4'].append(text_content)
-                    elif tag_name == 'p':
-                        content_structure['paragraphs'].append(text_content)
-            else:
-                print("Main content container not found.")
+            # Generate the PDF
+            page.pdf(
+                path=pdf_path,
+                format="A4",
+                print_background=True,
+            )
 
-        except Exception as e:
-            print(f"Error while scraping: {e}")
+            print(f"PDF generated successfully: {pdf_path}")
+            return pdf_path
 
-        # Print structured content
-        print(f"h1: {content_structure['h1']}")
-        print(f"h2: {content_structure['h2'] if content_structure['h2'] else 'None'}")
-        print(f"h3: {content_structure['h3'] if content_structure['h3'] else 'None'}")
-        print(f"h4: {content_structure['h4'] if content_structure['h4'] else 'None'}")
-        print("Paragraphs:")
-        for paragraph in content_structure['paragraphs']:
-            print(f"<p>{paragraph}</p>")
+    except Exception as e:
+        print(f"Error generating PDF: {e}")
+    finally:
+        # Ensure cleanup of resources
+        display.stop()
 
-        browser.close()
-        return content_structure
-
-# Test the function with the provided URL
-url = "https://www.bfmtv.com/international/moyen-orient/yemen-les-etats-unis-ont-frappe-des-installations-des-rebelles-houthis_AD-202411100111.html"
-scrape_article_content(url)
+# Example Usage
+if __name__ == "__main__":
+    url = "https://www.msn.com/it-it/notizie/italia/pozzolo-%C3%A8-stato-rinviato-a-giudizio-per-porto-illegale-di-armi/ar-AA1urEat"
+    title = "example_page"
+    save_page_as_pdf(url, title)

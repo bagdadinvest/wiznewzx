@@ -2072,9 +2072,6 @@ msgstr "شعبيه"
 msgid "publishedAt"
 msgstr "نشرت في"
 
-
-
-
 #: scrapper/wagtail_hooks.py:193
 msgid "Proposals"
 msgstr "مقترحات"

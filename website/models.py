@@ -330,6 +330,7 @@ class ProposalPage(CoderedWebPage):
 
     parent_page_types = ["website.ProposalIndexPage"]
 
+from coderedcms.models.snippet_models import ClassifierTerm
 
 class ProposalIndexPage(CoderedWebPage):
     """
@@ -356,6 +357,21 @@ class ProposalIndexPage(CoderedWebPage):
         if self.show_only_published:
             queryset = queryset.filter(publication_date__lte=models.F('go_live_at') or models.functions.Now())
         return queryset
+
+    def get_context(self, request):
+        context = super().get_context(request)
+
+        # Correct query to filter by classifier terms
+        try:
+            context['popular_items'] = ProposalPage.objects.live().filter(classifier_terms__classifier__name="Popular Items")
+            context['trending_area'] = ProposalPage.objects.live().filter(classifier_terms__classifier__name="Trending Area")
+            context['whats_new'] = ProposalPage.objects.live().filter(classifier_terms__classifier__name="What's New")
+        except ProposalPage.DoesNotExist:
+            context['popular_items'] = []
+            context['trending_area'] = []
+            context['whats_new'] = []
+
+        return context
 
 
     class Meta:

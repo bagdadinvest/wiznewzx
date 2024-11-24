@@ -59,7 +59,7 @@ def save_page_as_pdf(url, title):
     """PDF exporting with title as filename."""
     with sync_playwright() as p:
         try:
-            browser = p.chromium.launch(headless=False)
+            browser = p.chromium.launch(headless=True)
             context = browser.new_context()
             page = context.new_page()
             page.goto(url, timeout=60000, wait_until="domcontentloaded")
